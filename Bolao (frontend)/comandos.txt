@@ -1,0 +1,2 @@
+ng g m painel --routing (modulo com routing)
+ng g c painel/lista-paineis (component em painel)
