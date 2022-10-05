@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UsuarioService } from '../autenticacao/usuario/usuario.service';
+
 
 @Component({
   selector: 'app-header',
@@ -9,12 +9,10 @@ import { UsuarioService } from '../autenticacao/usuario/usuario.service';
 })
 export class HeaderComponent {
 
-  user$ = this.usuarioService.retornaUsuario()
+  constructor( private router: Router) { }
 
-  constructor(private usuarioService: UsuarioService, private router: Router) { }
-
-  logout(){
-    this.usuarioService.logout();
+  logout = () => {
+    localStorage.removeItem("jwt");
     this.router.navigate(['']);
   }
 

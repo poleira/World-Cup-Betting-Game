@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MARCO\\Desktop\\Bolao\\Bolao (backend)\\BolaoTeste\\BolaoTeste.csproj": {}
+    "C:\\Users\\MARCO\\Desktop\\World-Cup-Betting-Game\\Bolao (backend)\\BolaoTeste\\BolaoTeste.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MARCO\\Desktop\\Bolao\\Bolao (backend)\\BolaoTeste\\BolaoTeste.csproj": {
+    "C:\\Users\\MARCO\\Desktop\\World-Cup-Betting-Game\\Bolao (backend)\\BolaoTeste\\BolaoTeste.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MARCO\\Desktop\\Bolao\\Bolao (backend)\\BolaoTeste\\BolaoTeste.csproj",
+        "projectUniqueName": "C:\\Users\\MARCO\\Desktop\\World-Cup-Betting-Game\\Bolao (backend)\\BolaoTeste\\BolaoTeste.csproj",
         "projectName": "BolaoTeste",
-        "projectPath": "C:\\Users\\MARCO\\Desktop\\Bolao\\Bolao (backend)\\BolaoTeste\\BolaoTeste.csproj",
+        "projectPath": "C:\\Users\\MARCO\\Desktop\\World-Cup-Betting-Game\\Bolao (backend)\\BolaoTeste\\BolaoTeste.csproj",
         "packagesPath": "C:\\Users\\MARCO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MARCO\\Desktop\\Bolao\\Bolao (backend)\\BolaoTeste\\obj\\",
+        "outputPath": "C:\\Users\\MARCO\\Desktop\\World-Cup-Betting-Game\\Bolao (backend)\\BolaoTeste\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

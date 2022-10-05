@@ -1,5 +1,5 @@
 <app-header></app-header>
-<div class="espaco">
+<div *ngIf="isUserAuthenticated()" class="espaco">
     <div class="itens_container">
       <div class="grupo_container">
         <a class="escrita" href="bolao_A">Grupo A</a>

@@ -8,6 +8,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MensagemComponent } from '../componentes/mensagem/mensagem.component';
 import { MensagemModule } from '../componentes/mensagem/mensagem.module';
 import { NovoUsuarioComponent } from './novo-usuario/novo-usuario.component';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -20,7 +23,7 @@ import { NovoUsuarioComponent } from './novo-usuario/novo-usuario.component';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    FormsModule, MensagemModule, ReactiveFormsModule
+    FormsModule, MensagemModule, ReactiveFormsModule, HttpClientModule,
   ],
   providers:[],
   exports: [HomeComponent],

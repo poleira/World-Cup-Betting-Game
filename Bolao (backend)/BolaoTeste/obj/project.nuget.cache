@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "a1MNAniMx7c69gfBIn31DL+jGOkZ+n9nSqqKGd9cY0Fa1LCbhN6ni6tgx4f6tzHBYh3G/K01/EGX/o+NqBy0dg==",
+  "dgSpecHash": "h6/KGTr8U4/WXG2yiBmBeIaOJVO0xkpFGWGumjlUneLyRvI8N9qeVSQCjAauPfJ4NoMxmvPUj5Pt3XxTqrvctw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\MARCO\\Desktop\\Bolao\\Bolao (backend)\\BolaoTeste\\BolaoTeste.csproj",
+  "projectFilePath": "C:\\Users\\MARCO\\Desktop\\World-Cup-Betting-Game\\Bolao (backend)\\BolaoTeste\\BolaoTeste.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MARCO\\.nuget\\packages\\antlr3.runtime\\3.5.1\\antlr3.runtime.3.5.1.nupkg.sha512",
     "C:\\Users\\MARCO\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",

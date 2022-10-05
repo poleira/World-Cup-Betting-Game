@@ -1,6 +1,10 @@
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AutenticacaoService } from 'src/app/autenticacao/autenticacao.service';
+import { AuthenticatedResponse } from 'src/app/autenticacao/usuario/token';
+import { Usuario } from 'src/app/autenticacao/usuario/usuario';
+
 
 @Component({
   selector: 'app-login',
@@ -8,28 +12,36 @@ import { AutenticacaoService } from 'src/app/autenticacao/autenticacao.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  invalidLogin: boolean = true;
   usuario:string = '';
   senha:string = '';
 
 
-  constructor( private authService: AutenticacaoService,
-    private router: Router) { }
+  constructor( 
+    private router: Router, private http: HttpClient
+    ) { }
 
   ngOnInit(): void {
   }
 
-  login(){
-    this.authService.autenticar(this.usuario, this.senha).subscribe(
-      () => {
-        console.log('progresso')
-        this.router.navigate(['painel'])
-      },
-      (error) => {
-        alert('erro');
-        console.log(error);
-      }
-    );
-  }
+  login() {
+      this.http.post<AuthenticatedResponse>('https://localhost:7288/api/Login', {
+        usuario: this.usuario,
+        senha: this.senha,
+      }, {
+        headers: new HttpHeaders({ "Content-Type": "application/json"})
+      })
+      .subscribe({
+        next: (response: AuthenticatedResponse) => {
+          const token = response.token;
+          localStorage.setItem("jwt", token); 
+          this.invalidLogin = false; 
+          this.router.navigate(['painel']);
+        },
+        error: (err: HttpErrorResponse) => this.invalidLogin = true
+      })
+    }
+
+
 
 }

@@ -21,20 +21,17 @@ namespace BolaoTeste.Controllers
         }
 
         [HttpPost]
-        public HttpResponseMessage Login([FromBody] ChecarUsuarioRequest loginDto)
+        public ActionResult Login([FromBody] ChecarUsuarioRequest loginDto)
         {
  
             var retorno = cadastroServico.Login(loginDto);
             
-
-            var response = ;
             if (retorno == null) 
             {
-                response.StatusCode = System.Net.HttpStatusCode.BadRequest;
-                return response;
+               return BadRequest();
             }
-
-            return response.Headers.Add("X-Auth-Token", retorno.Token);
+            return Ok(retorno);
+            
 
             
         }
