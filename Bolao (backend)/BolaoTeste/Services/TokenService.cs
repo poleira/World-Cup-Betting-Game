@@ -10,20 +10,19 @@ namespace BolaoTeste.Services
     {
         public static string GenerateToken(Cadastro user)
         {
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(TokenSettings.Secret);
-            var tokenDescriptor = new SecurityTokenDescriptor
-            {
-                Subject = new ClaimsIdentity(new Claim[]
-                {
-                    new Claim(ClaimTypes.Name, user.Usuario.ToString())                    
-                }),
-                Expires = DateTime.UtcNow.AddHours(1),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
-            };
+            var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("botafogo"));
+            var signinCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
+            var tokeOptions = new JwtSecurityToken(
+                issuer: "https://localhost:7288",
+                audience: "https://localhost:7288",
+                claims : new List<Claim>() { new Claim(ClaimTypes.Name, user.Usuario) },
+                expires: DateTime.Now.AddMinutes(50),
+                signingCredentials: signinCredentials
+                );
 
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-            return tokenHandler.WriteToken(token);
+            var tokenString = new JwtSecurityTokenHandler().WriteToken(tokeOptions);
+            return tokenString;
+
         }
     }
 }

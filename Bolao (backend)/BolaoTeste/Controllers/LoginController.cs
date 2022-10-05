@@ -28,7 +28,7 @@ namespace BolaoTeste.Controllers
             
             if (retorno == null) 
             {
-               return BadRequest();
+                return Unauthorized();
             }
             return Ok(retorno);
             

@@ -1,10 +1,13 @@
 using BolaoTeste;
 using BolaoTeste.Aplicacao.Cadastros.Servicos;
 using BolaoTeste.Aplicacao.Cadastros.Servicos.Interfaces;
+using BolaoTeste.Aplicacao.Rank.Servicos;
+using BolaoTeste.Aplicacao.Rank.Servicos.Interfaces;
 using BolaoTeste.Data.Interfaces;
 using BolaoTeste.Data.Mapeamento;
 using BolaoTeste.Data.Repositorios;
 using BolaoTeste.Profiles;
+using BolaoTeste.Rank.Profiles;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -19,10 +22,31 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddAuthentication(opt => {
+    opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = "https://localhost:7288",
+            ValidAudience = "https://localhost:7288",
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("botafogo")),
+            
+    };
+    });
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddAutoMapper(typeof(RankProfile));
 builder.Services.AddAutoMapper(typeof(CadastroProfile));
+
 
 builder.Services.AddCors(options =>
 {
@@ -43,36 +67,16 @@ builder.Services.AddSingleton<ISessionFactory>(factory =>
                 .BuildSessionFactory();
 });
 
-builder.Services.AddAuthentication(x =>
-{
-    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-});
+
 
 
 builder.Services.AddSingleton<ISession>(factory => factory.GetService<ISessionFactory>()!.OpenSession());
 
 builder.Services.AddSingleton<ICadastroRepositorio, CadastroRepositorio>();
 builder.Services.AddSingleton<ICadastroServico, CadastroServico>();
+builder.Services.AddSingleton<IRankServico, RankServico>();
 
-var key = Encoding.ASCII.GetBytes(TokenSettings.Secret);
-builder.Services.AddAuthentication(x =>
-{
-    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-})
-.AddJwtBearer(x =>
-{
-    x.RequireHttpsMetadata = false;
-    x.SaveToken = true;
-    x.TokenValidationParameters = new TokenValidationParameters
-    {
-        ValidateIssuerSigningKey = true,
-        IssuerSigningKey = new SymmetricSecurityKey(key),
-        ValidateIssuer = false,
-        ValidateAudience = false
-    };
-});
+
 
 var app = builder.Build();
 

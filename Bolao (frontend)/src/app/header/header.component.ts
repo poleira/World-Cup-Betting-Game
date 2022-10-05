@@ -16,4 +16,8 @@ export class HeaderComponent {
     this.router.navigate(['']);
   }
 
+  rank(){
+    this.router.navigate(['painel/rank']);
+  }
+
 }
