@@ -36,7 +36,7 @@ builder.Services.AddAuthentication(opt => {
             ValidateIssuerSigningKey = true,
             ValidIssuer = "https://localhost:7288",
             ValidAudience = "https://localhost:7288",
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("botafogo")),
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("BotafOgos1534")),
             
     };
     });
@@ -91,7 +91,7 @@ app.UseHttpsRedirection();
 app.UseCors("MyCorsImplementationPolicy");
 app.UseAuthorization();
 app.UseAuthentication();
-app.UseAuthorization();
+
 
 app.MapControllers();
 
