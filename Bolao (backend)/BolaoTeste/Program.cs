@@ -36,7 +36,7 @@ builder.Services.AddAuthentication(opt => {
             ValidateIssuerSigningKey = true,
             ValidIssuer = "https://localhost:7288",
             ValidAudience = "https://localhost:7288",
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("BotafOgos1534")),
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("bsdhfgskdj32njkndwj4odhdol3n2dk")),
             
     };
     });
