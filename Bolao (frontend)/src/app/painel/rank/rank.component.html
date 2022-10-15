@@ -1,4 +1,7 @@
 <h1>Customers</h1>
 <ul>
-  <li *ngFor="let cust of customers">{{ cust }}</li>
+  <li *ngFor="let cust of customers">
+    <span>{{cust.usuario}}</span>
+    <span>{{cust.pontuacao}}</span>
+  </li>
 </ul>

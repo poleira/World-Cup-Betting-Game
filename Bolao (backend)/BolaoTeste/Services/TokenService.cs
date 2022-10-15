@@ -15,6 +15,7 @@ namespace BolaoTeste.Services
             var tokeOptions = new JwtSecurityToken(
                 issuer: "https://localhost:7288",
                 audience: "https://localhost:7288",
+           
                 claims : new List<Claim>() { new Claim(ClaimTypes.Name, user.Usuario) },
                 expires: DateTime.Now.AddMinutes(50),
                 signingCredentials: signinCredentials

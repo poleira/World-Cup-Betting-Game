@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    localStorage.removeItem("jwt");
   }
 
   login() {
@@ -34,7 +35,9 @@ export class LoginComponent implements OnInit {
       .subscribe({
         next: (response: AuthenticatedResponse) => {
           const token = response.token;
+          const id = response.id;
           localStorage.setItem("jwt", token); 
+          localStorage.setItem("id", id); 
           this.invalidLogin = false; 
           this.router.navigate(['painel']);
         },

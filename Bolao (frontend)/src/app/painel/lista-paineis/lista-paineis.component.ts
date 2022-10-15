@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { HeaderComponent } from 'src/app/header/header.component';
 
@@ -10,7 +11,11 @@ import { HeaderComponent } from 'src/app/header/header.component';
 })
 export class ListaPaineisComponent implements OnInit {
 
-  constructor(private jwtHelper: JwtHelperService) { }
+  constructor(private jwtHelper: JwtHelperService, private router: Router) { }
+  
+  navegarGrupoA = () => {
+      this.router.navigate(['grupoA']);
+    }
   
   isUserAuthenticated = (): boolean => {
     const token = localStorage.getItem("jwt");

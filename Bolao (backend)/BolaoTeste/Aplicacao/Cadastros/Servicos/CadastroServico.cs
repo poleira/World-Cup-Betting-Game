@@ -58,8 +58,7 @@ namespace BolaoTeste.Aplicacao.Cadastros.Servicos
         {
             try
             {
-                IList<Cadastro> categoriasDb = cadastroRepositorio.Query().ToList();
-             
+                IList<Cadastro> categoriasDb = cadastroRepositorio.Query().ToList();             
                 IList<CreateCadastroResponse> categorias = mapper.Map<IList<CreateCadastroResponse>>(categoriasDb);
                 return categorias;
             }
@@ -83,9 +82,7 @@ namespace BolaoTeste.Aplicacao.Cadastros.Servicos
 
                         var retorno = new ChecarUsuarioResponse();
                         retorno.Token = token;
-                        
-                        
-                        //retorno.Usuario = login.Usuario;
+                        retorno.Id = c.Id;
 
                         return retorno;
                     }                        
