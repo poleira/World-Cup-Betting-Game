@@ -8,17 +8,57 @@ const routes: Routes = [
   {
     path: '',
     component: ListaPaineisComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   {
-  path: 'rank',
-  component: RankComponent,
-  canActivate: [AuthGuard]
-  }
+    path: 'rank',
+    component: RankComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'grupoB',
+    loadChildren: () =>
+      import('../palpites/grupo-b/grupo-b.module').then((m) => m.GrupoBModule),
+  },
+  {
+    path: 'grupoA',
+    loadChildren: () =>
+      import('../palpites/grupo-a/grupo-a.module').then((m) => m.GrupoAModule),
+  },
+  {
+    path: 'grupoC',
+    loadChildren: () =>
+      import('../palpites/grupo-c/grupo-c.module').then((m) => m.GrupoCModule),
+  },
+  {
+    path: 'grupoD',
+    loadChildren: () =>
+      import('../palpites/grupo-d/grupo-d.module').then((m) => m.GrupoDModule),
+  },
+  {
+    path: 'grupoE',
+    loadChildren: () =>
+      import('../palpites/grupo-e/grupo-e.module').then((m) => m.GrupoEModule),
+  },
+  {
+    path: 'grupoF',
+    loadChildren: () =>
+      import('../palpites/grupo-f/grupo-f.module').then((m) => m.GrupoFModule),
+  },
+  {
+    path: 'grupoG',
+    loadChildren: () =>
+      import('../palpites/grupo-g/grupo-g.module').then((m) => m.GrupoGModule),
+  },
+  {
+    path: 'grupoH',
+    loadChildren: () =>
+      import('../palpites/grupo-h/grupo-h.module').then((m) => m.GrupoHModule),
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class PainelRoutingModule { }
+export class PainelRoutingModule {}

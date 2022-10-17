@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from 'src/app/guards/auth.guard';
-import { GrupoAComponent } from './grupo-a.component';
+import { GrupoFComponent } from './grupo-f.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: GrupoAComponent,
+    component: GrupoFComponent,
     canActivate: [AuthGuard],
   },
 ];
@@ -15,4 +15,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class GrupoARoutingModule {}
+export class GrupoFRoutingModule {}

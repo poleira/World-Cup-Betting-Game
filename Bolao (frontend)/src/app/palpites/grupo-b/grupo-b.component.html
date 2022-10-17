@@ -1,0 +1,84 @@
+<div class="cadastroBackground">
+  <div class="cadastroContainer">
+    <div class="itensContainer">
+      <h1 class="titulo">Grupo B</h1>
+      <form (ngSubmit)="(enviar)">
+        <div
+          class="selectContainer"
+          style="background: linear-gradient(to right, white, rgb(255, 73, 73))"
+        >
+          <!-- <h1>Inglaterra</h1> -->
+          <img src="https://cdn.countryflags.com/thumbs/england/flag-400.png" />
+          <h1>Inglaterra</h1>
+          <select name="Inglaterra" required [(ngModel)]="Inglaterra">
+            <option value="1">1°</option>
+            <option value="2">2°</option>
+            <option value="3">3°</option>
+            <option value="4">4°</option>
+          </select>
+        </div>
+        <div
+          class="selectContainer"
+          style="background: linear-gradient(to right, green, white, red)"
+        >
+          <img
+            src="https://www.countryflags.com/wp-content/uploads/iran-flag-png-large.png"
+          />
+          <h1>Iran</h1>
+          <!-- <img
+            src="https://www.countryflags.com/wp-content/uploads/iran-flag-png-large.png"
+          /> -->
+          <select name="Iran" required [(ngModel)]="Iran">
+            <option value="1">1°</option>
+            <option value="2">2°</option>
+            <option value="3">3°</option>
+            <option value="4">4°</option>
+          </select>
+        </div>
+        <div
+          class="selectContainer"
+          style="
+            background: linear-gradient(to right, darkblue, white, darkred);
+          "
+        >
+          <!-- <h1>USA</h1> -->
+          <img
+            src="https://www.countryflags.com/wp-content/uploads/united-states-of-america-flag-png-large.png"
+          />
+          <h1>USA</h1>
+          <select name="USA" required [(ngModel)]="USA">
+            <option value="1">1°</option>
+            <option value="2">2°</option>
+            <option value="3">3°</option>
+            <option value="4">4°</option>
+          </select>
+        </div>
+        <div
+          class="selectContainer"
+          style="
+            background: linear-gradient(
+              to right,
+              darkred,
+              rgb(253, 253, 253),
+              darkgreen
+            );
+          "
+        >
+          <!-- <h1>País de Gales</h1> -->
+          <img src="https://cdn.countryflags.com/thumbs/wales/flag-800.png" />
+          <h1>País de Gales</h1>
+          <select name="PaísDeGales" required [(ngModel)]="PaisDeGales">
+            <option value="1">1°</option>
+            <option value="2">2°</option>
+            <option value="3">3°</option>
+            <option value="4">4°</option>
+          </select>
+        </div>
+        <div class="submitContainer">
+          <button type="submit" class="button">Registrar</button>
+          <a class="loginButton" routerLink="/painel">Menu</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

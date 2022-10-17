@@ -1,160 +1,228 @@
 <app-header></app-header>
 <div *ngIf="isUserAuthenticated()" class="espaco">
-    <div class="itens_container">
-      <div class="grupo_container">
-        <a class="escrita" [routerLink]="['grupoA']" (click)="navegarGrupoA()">Grupo A</a>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">1°</h2>
-        </div>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">2°</h2>
-        </div>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">3°</h2>
-        </div>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">4°</h2>
-        </div>
+  <div class="itens_container">
+    <div class="grupo_container">
+      <a class="escrita" [routerLink]="['grupoA']">Grupo A</a>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">1°</h2>
       </div>
-      <div class="grupo_container">
-        <a class="escrita" href="bolao_B">Grupo B</a>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">1°</h2>
-        </div>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">2°</h2>
-        </div>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">3°</h2>
-        </div>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">4°</h2>
-        </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">2°</h2>
       </div>
-      <div class="grupo_container">
-        <a class="escrita" href="bolao_C">Grupo C</a>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">1°</h2>
-        </div>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">2°</h2>
-        </div>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">3°</h2>
-        </div>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">4°</h2>
-        </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">3°</h2>
       </div>
-      <div class="grupo_container">
-        <a class="escrita" href="bolao_D">Grupo D</a>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">1°</h2>
-        </div>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">2°</h2>
-        </div>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">3°</h2>
-        </div>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">4°</h2>
-        </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">4°</h2>
       </div>
-      <div class="grupo_container">
-        <a class="escrita" href="bolao_E">Grupo E</a>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">1°</h2>
-        </div>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">2°</h2>
-        </div>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">3°</h2>
-        </div>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">4°</h2>
-        </div>
+    </div>
+    <div class="grupo_container">
+      <a class="escrita" [routerLink]="['grupoB']">Grupo B</a>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">1°</h2>
       </div>
-      <div class="grupo_container">
-        <a class="escrita" href="bolao_F">Grupo F</a>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">1°</h2>
-        </div>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">2°</h2>
-        </div>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">3°</h2>
-        </div>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">4°</h2>
-        </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">2°</h2>
       </div>
-      <div class="grupo_container">
-        <a class="escrita" href="bolao_G">Grupo G</a>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">1°</h2>
-        </div>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">2°</h2>
-        </div>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">3°</h2>
-        </div>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">4°</h2>
-        </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">3°</h2>
       </div>
-      <div class="grupo_container">
-        <a class="escrita" href="bolao_H">Grupo H</a>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">1°</h2>
-        </div>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">2°</h2>
-        </div>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">3°</h2>
-        </div>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">4°</h2>
-        </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">4°</h2>
       </div>
-      <div class="grupo_container_oitavas">
-        <a class="escrita" href="menu">Oitavas</a>
+    </div>
+    <div class="grupo_container">
+      <a class="escrita" [routerLink]="['grupoC']">Grupo C</a>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">1°</h2>
+      </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">2°</h2>
+      </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">3°</h2>
+      </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">4°</h2>
+      </div>
+    </div>
+    <div class="grupo_container">
+      <a class="escrita" [routerLink]="['grupoD']">Grupo D</a>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">1°</h2>
+      </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">2°</h2>
+      </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">3°</h2>
+      </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">4°</h2>
+      </div>
+    </div>
+    <div class="grupo_container">
+      <a class="escrita" [routerLink]="['grupoE']">Grupo E</a>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">1°</h2>
+      </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">2°</h2>
+      </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">3°</h2>
+      </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">4°</h2>
+      </div>
+    </div>
+    <div class="grupo_container">
+      <a class="escrita" [routerLink]="['grupoF']">Grupo F</a>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">1°</h2>
+      </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">2°</h2>
+      </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">3°</h2>
+      </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">4°</h2>
+      </div>
+    </div>
+    <div class="grupo_container">
+      <a class="escrita" [routerLink]="['grupoG']">Grupo G</a>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">1°</h2>
+      </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">2°</h2>
+      </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">3°</h2>
+      </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">4°</h2>
+      </div>
+    </div>
+    <div class="grupo_container">
+      <a class="escrita" [routerLink]="['grupoH']">Grupo H</a>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">1°</h2>
+      </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">2°</h2>
+      </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">3°</h2>
+      </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">4°</h2>
+      </div>
+    </div>
+    <div class="grupo_container_oitavas">
+      <a class="escrita" href="menu">Oitavas</a>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">1</h2>
+      </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">2</h2>
+      </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">3</h2>
+      </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">4</h2>
+      </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">5</h2>
+      </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">6</h2>
+      </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">7</h2>
+      </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">8</h2>
+      </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">9</h2>
+      </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">10</h2>
+      </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">11</h2>
+      </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">12</h2>
+      </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">13</h2>
+      </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">14</h2>
+      </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">15</h2>
+      </div>
+      <div class="pais_container">
+        <h2 class="pais_escrita">pais</h2>
+        <h2 class="pais_escrita">16</h2>
+      </div>
+    </div>
+    <div class="espaco2">
+      <div class="grupo_container_quartas">
+        <a class="escrita" href="menu">Quartas</a>
         <div class="pais_container">
           <h2 class="pais_escrita">pais</h2>
           <h2 class="pais_escrita">1</h2>
@@ -187,139 +255,70 @@
           <h2 class="pais_escrita">pais</h2>
           <h2 class="pais_escrita">8</h2>
         </div>
+      </div>
+      <div class="grupo_container_semis">
+        <a class="escrita" href="menu">Semis</a>
         <div class="pais_container">
           <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">9</h2>
+          <h2 class="pais_escrita">1</h2>
         </div>
         <div class="pais_container">
           <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">10</h2>
+          <h2 class="pais_escrita">2</h2>
         </div>
         <div class="pais_container">
           <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">11</h2>
+          <h2 class="pais_escrita">3</h2>
         </div>
         <div class="pais_container">
           <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">12</h2>
-        </div>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">13</h2>
-        </div>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">14</h2>
-        </div>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">15</h2>
-        </div>
-        <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">16</h2>
+          <h2 class="pais_escrita">4</h2>
         </div>
       </div>
-      <div class="espaco2">
-        <div class="grupo_container_quartas">
-          <a class="escrita" href="menu">Quartas</a>
-          <div class="pais_container">
-            <h2 class="pais_escrita">pais</h2>
-            <h2 class="pais_escrita">1</h2>
-          </div>
-          <div class="pais_container">
-            <h2 class="pais_escrita">pais</h2>
-            <h2 class="pais_escrita">2</h2>
-          </div>
-          <div class="pais_container">
-            <h2 class="pais_escrita">pais</h2>
-            <h2 class="pais_escrita">3</h2>
-          </div>
-          <div class="pais_container">
-            <h2 class="pais_escrita">pais</h2>
-            <h2 class="pais_escrita">4</h2>
-          </div>
-          <div class="pais_container">
-            <h2 class="pais_escrita">pais</h2>
-            <h2 class="pais_escrita">5</h2>
-          </div>
-          <div class="pais_container">
-            <h2 class="pais_escrita">pais</h2>
-            <h2 class="pais_escrita">6</h2>
-          </div>
-          <div class="pais_container">
-            <h2 class="pais_escrita">pais</h2>
-            <h2 class="pais_escrita">7</h2>
-          </div>
-          <div class="pais_container">
-            <h2 class="pais_escrita">pais</h2>
-            <h2 class="pais_escrita">8</h2>
-          </div>
+    </div>
+    <div class="espaco2">
+      <div class="grupo_container_finais">
+        <a class="escrita" href="menu">Finais</a>
+        <div class="pais_container">
+          <h2 class="pais_escrita">pais</h2>
+          <h2 class="pais_escrita">1</h2>
         </div>
-        <div class="grupo_container_semis">
-          <a class="escrita" href="menu">Semis</a>
-          <div class="pais_container">
-            <h2 class="pais_escrita">pais</h2>
-            <h2 class="pais_escrita">1</h2>
-          </div>
-          <div class="pais_container">
-            <h2 class="pais_escrita">pais</h2>
-            <h2 class="pais_escrita">2</h2>
-          </div>
-          <div class="pais_container">
-            <h2 class="pais_escrita">pais</h2>
-            <h2 class="pais_escrita">3</h2>
-          </div>
-          <div class="pais_container">
-            <h2 class="pais_escrita">pais</h2>
-            <h2 class="pais_escrita">4</h2>
-          </div>
+        <div class="pais_container">
+          <h2 class="pais_escrita">pais</h2>
+          <h2 class="pais_escrita">2</h2>
         </div>
       </div>
-      <div class="espaco2">
-        <div class="grupo_container_finais">
-          <a class="escrita" href="menu">Finais</a>
-          <div class="pais_container">
-            <h2 class="pais_escrita">pais</h2>
-            <h2 class="pais_escrita">1</h2>
-          </div>
-          <div class="pais_container">
-            <h2 class="pais_escrita">pais</h2>
-            <h2 class="pais_escrita">2</h2>
-          </div>
+      <div class="grupo_container_brasil">
+        <a class="escrita" href="menu">Jogos Brasil</a>
+        <div class="pais_container">
+          <h2 class="pais_escrita">Jogo</h2>
+          <h2 class="pais_escrita">1</h2>
         </div>
-        <div class="grupo_container_brasil">
-          <a class="escrita" href="menu">Jogos Brasil</a>
-          <div class="pais_container">
-            <h2 class="pais_escrita">Jogo</h2>
-            <h2 class="pais_escrita">1</h2>
-          </div>
-          <div class="pais_container">
-            <h2 class="pais_escrita">Jogo</h2>
-            <h2 class="pais_escrita">2</h2>
-          </div>
-          <div class="pais_container">
-            <h2 class="pais_escrita">Jogo</h2>
-            <h2 class="pais_escrita">3</h2>
-          </div>
-          <div class="pais_container">
-            <h2 class="pais_escrita">Jogo</h2>
-            <h2 class="pais_escrita">4</h2>
-          </div>
-          <div class="pais_container">
-            <h2 class="pais_escrita">Jogo</h2>
-            <h2 class="pais_escrita">5</h2>
-          </div>
-          <div class="pais_container">
-            <h2 class="pais_escrita">Jogo</h2>
-            <h2 class="pais_escrita">6</h2>
-          </div>
-          <div class="pais_container">
-            <h2 class="pais_escrita">Jogo</h2>
-            <h2 class="pais_escrita">7</h2>
-          </div>
+        <div class="pais_container">
+          <h2 class="pais_escrita">Jogo</h2>
+          <h2 class="pais_escrita">2</h2>
+        </div>
+        <div class="pais_container">
+          <h2 class="pais_escrita">Jogo</h2>
+          <h2 class="pais_escrita">3</h2>
+        </div>
+        <div class="pais_container">
+          <h2 class="pais_escrita">Jogo</h2>
+          <h2 class="pais_escrita">4</h2>
+        </div>
+        <div class="pais_container">
+          <h2 class="pais_escrita">Jogo</h2>
+          <h2 class="pais_escrita">5</h2>
+        </div>
+        <div class="pais_container">
+          <h2 class="pais_escrita">Jogo</h2>
+          <h2 class="pais_escrita">6</h2>
+        </div>
+        <div class="pais_container">
+          <h2 class="pais_escrita">Jogo</h2>
+          <h2 class="pais_escrita">7</h2>
         </div>
       </div>
     </div>
   </div>
-  
+</div>

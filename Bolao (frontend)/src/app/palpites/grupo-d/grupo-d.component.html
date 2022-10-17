@@ -1,12 +1,12 @@
 <div class="cadastroBackground">
   <div class="cadastroContainer">
     <div class="itensContainer">
-      <h1 class="titulo">Grupo A</h1>
-      <form (ngSubmit)="enviar()">
+      <h1 class="titulo">Grupo D</h1>
+      <form (ngSubmit)="(enviar)">
         <div class="demo_wrap">
-          <h1>Qatar</h1>
-          <img src="https://cdn.countryflags.com/thumbs/qatar/flag-800.png" />
-          <select name="Qatar" required [(ngModel)]="Qatar">
+          <h1>França</h1>
+          <img src="https://cdn.countryflags.com/thumbs/france/flag-400.png" />
+          <select name="Franca" required [(ngModel)]="Franca">
             <option value="1">1°</option>
             <option value="2">2°</option>
             <option value="3">3°</option>
@@ -14,31 +14,31 @@
           </select>
         </div>
         <div class="demo_wrap">
-          <h1>Ecuador</h1>
-          <img src="https://cdn.countryflags.com/thumbs/ecuador/flag-400.png" />
-          <select name="Ecuador" required [(ngModel)]="Ecuador">
-            <option value="1">1°</option>
-            <option value="2">2°</option>
-            <option value="3">3°</option>
-            <option value="4">4°</option>
-          </select>
-        </div>
-        <div class="demo_wrap">
-          <h1>Senegal</h1>
-          <img src="https://cdn.countryflags.com/thumbs/senegal/flag-400.png" />
-          <select name="Senegal" required [(ngModel)]="Senegal">
-            <option value="1">1°</option>
-            <option value="2">2°</option>
-            <option value="3">3°</option>
-            <option value="4">4°</option>
-          </select>
-        </div>
-        <div class="demo_wrap">
-          <h1>Holanda</h1>
+          <h1>Austrália</h1>
           <img
-            src="https://cdn.countryflags.com/thumbs/netherlands/flag-400.png"
+            src="https://cdn.countryflags.com/thumbs/australia/flag-400.png"
           />
-          <select name="Holanda" required [(ngModel)]="Holanda">
+          <select name="Australia" required [(ngModel)]="Australia">
+            <option value="1">1°</option>
+            <option value="2">2°</option>
+            <option value="3">3°</option>
+            <option value="4">4°</option>
+          </select>
+        </div>
+        <div class="demo_wrap">
+          <h1>Dinamarca</h1>
+          <img src="https://cdn.countryflags.com/thumbs/denmark/flag-800.png" />
+          <select name="Dinamarca" required [(ngModel)]="Dinamarca">
+            <option value="1">1°</option>
+            <option value="2">2°</option>
+            <option value="3">3°</option>
+            <option value="4">4°</option>
+          </select>
+        </div>
+        <div class="demo_wrap">
+          <h1>Tunisia</h1>
+          <img src="https://cdn.countryflags.com/thumbs/tunisia/flag-400.png" />
+          <select name="Tunisia" required [(ngModel)]="Tunisia">
             <option value="1">1°</option>
             <option value="2">2°</option>
             <option value="3">3°</option>
@@ -47,7 +47,9 @@
         </div>
         <div class="submitContainer">
           <button type="submit" class="button">Registrar</button>
-          <a class="loginButton" routerLink="/painel">Menu</a>
+          <a class="loginButton" [routerLink]="['painel']" (click)="goPainel()"
+            >Menu</a
+          >
         </div>
       </form>
     </div>

@@ -1,19 +1,18 @@
-import { Usuario } from 'src/app/autenticacao/usuario/usuario';
-import { JwtHelperService } from '@auth0/angular-jwt';
-import { Router, Routes } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
-  selector: 'app-grupo-a',
-  templateUrl: './grupo-a.component.html',
-  styleUrls: ['./grupo-a.component.css'],
+  selector: 'app-grupo-c',
+  templateUrl: './grupo-c.component.html',
+  styleUrls: ['./grupo-c.component.css'],
 })
-export class GrupoAComponent implements OnInit {
-  Qatar: number = 0;
-  Ecuador: number = 0;
-  Senegal: number = 0;
-  Holanda: number = 0;
+export class GrupoCComponent implements OnInit {
+  Argentina: number = 0;
+  ArabiaSaudita: number = 0;
+  Mexico: number = 0;
+  Polonia: number = 0;
   Usuario: String = '';
 
   constructor(
@@ -39,10 +38,10 @@ export class GrupoAComponent implements OnInit {
     }
 
     this.httpClient.put('https://localhost:7288/api/BolaoA', {
-      Qatar: this.Qatar,
-      Ecuador: this.Ecuador,
-      Senegal: this.Senegal,
-      Holanda: this.Holanda,
+      Argentina: this.Argentina,
+      ArabiaSaudita: this.ArabiaSaudita,
+      Mexico: this.Mexico,
+      Polonia: this.Polonia,
       Usuario: this.Usuario,
     });
   }
