@@ -178,3 +178,4 @@ C:\Users\MARCO\Desktop\World-Cup-Betting-Game\Bolao (backend)\BolaoTeste\obj\Deb
 C:\Users\MARCO\Desktop\World-Cup-Betting-Game\Bolao (backend)\BolaoTeste\obj\Debug\net6.0\BolaoTeste.pdb
 C:\Users\MARCO\Desktop\World-Cup-Betting-Game\Bolao (backend)\BolaoTeste\obj\Debug\net6.0\BolaoTeste.genruntimeconfig.cache
 C:\Users\MARCO\Desktop\World-Cup-Betting-Game\Bolao (backend)\BolaoTeste\obj\Debug\net6.0\ref\BolaoTeste.dll
+C:\Users\MARCO\Desktop\World-Cup-Betting-Game\Bolao (backend)\BolaoTeste\bin\Debug\net6.0\Dapper.dll

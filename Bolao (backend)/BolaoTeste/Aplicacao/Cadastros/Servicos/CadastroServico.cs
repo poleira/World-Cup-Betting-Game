@@ -26,11 +26,35 @@ namespace BolaoTeste.Aplicacao.Cadastros.Servicos
 
         public CreateCadastroResponse AdicionaCadastro(CreateCadastroRequest inserirRequest)
         {
-            
-            var cadastroInserir = mapper.Map<Cadastro>(inserirRequest);
-            var transacao = session.BeginTransaction();
-            
+            var ga = new Ga();
+            var gb = new Gb();
+            var gc = new Gc();
+            var gd = new Gd();
+            var ge = new Ge();
+            var gf = new Gf();
+            var gg = new Gg();
+            var gh = new Gh();
+            var oitavas = new Oitavas();
+            var quartas = new Quartas();
+            var semis = new Semis();
+            var finais = new Finais();
+            var jogosDoBr = new Jogos_BR();
+            Cadastro cadastroInserir = mapper.Map<Cadastro>(inserirRequest);
+            cadastroInserir.Ga = ga;
+            cadastroInserir.Gb = gb;
+            cadastroInserir.Gc = gc;
+            cadastroInserir.Gd = gd;
+            cadastroInserir.Ge = ge;
+            cadastroInserir.Gf = gf;
+            cadastroInserir.Gg = gg;
+            cadastroInserir.Gh = gh;
+            cadastroInserir.Oitavas = oitavas;
+            cadastroInserir.Quartas = quartas;
+            cadastroInserir.Semis = semis;
+            cadastroInserir.Finais = finais;
+            cadastroInserir.Jogos_BR = jogosDoBr;
 
+            var transacao = session.BeginTransaction();            
             try
             {                
                 IList<Cadastro> cadastroDb = cadastroRepositorio.Query().ToList();

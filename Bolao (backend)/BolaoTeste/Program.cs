@@ -1,11 +1,14 @@
 using BolaoTeste;
 using BolaoTeste.Aplicacao.Cadastros.Servicos;
 using BolaoTeste.Aplicacao.Cadastros.Servicos.Interfaces;
+using BolaoTeste.Aplicacao.Palpites.Servicos;
+using BolaoTeste.Aplicacao.Palpites.Servicos.Interfaces;
 using BolaoTeste.Aplicacao.Rank.Servicos;
 using BolaoTeste.Aplicacao.Rank.Servicos.Interfaces;
 using BolaoTeste.Data.Interfaces;
 using BolaoTeste.Data.Mapeamento;
 using BolaoTeste.Data.Repositorios;
+using BolaoTeste.Data.Repositorios.Interfaces;
 using BolaoTeste.Profiles;
 using BolaoTeste.Rank.Profiles;
 using FluentNHibernate.Cfg;
@@ -73,14 +76,15 @@ builder.Services.AddSingleton<ISessionFactory>(factory =>
 builder.Services.AddSingleton<ISession>(factory => factory.GetService<ISessionFactory>()!.OpenSession());
 
 builder.Services.AddSingleton<ICadastroRepositorio, CadastroRepositorio>();
+builder.Services.AddSingleton<IPalpiteRepositorio, PalpiteRepositorio>();
 builder.Services.AddSingleton<ICadastroServico, CadastroServico>();
 builder.Services.AddSingleton<IRankServico, RankServico>();
+builder.Services.AddSingleton<IPalpiteServico, PalpiteServico>();
 
 
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

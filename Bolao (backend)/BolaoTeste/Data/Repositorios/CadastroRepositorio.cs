@@ -22,7 +22,8 @@ namespace BolaoTeste.Data.Repositorios
 
         public Cadastro Editar(Cadastro cadastro)
         {
-            throw new NotImplementedException();
+            session.Update(cadastro);
+            return cadastro;
         }
 
         public Cadastro Inserir(Cadastro cadastro)
@@ -45,7 +46,6 @@ namespace BolaoTeste.Data.Repositorios
         public bool Checar(string usuario)
         {
             var query = Query();
-
 
             query.Where(user => user.Usuario == usuario);
             if(query.Count() > 0)
