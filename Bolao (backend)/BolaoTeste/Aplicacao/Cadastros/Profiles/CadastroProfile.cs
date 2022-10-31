@@ -2,7 +2,7 @@
 using BolaoTeste.Data.Dto.Cadastros;
 using BolaoTeste.Dto.Cadastros;
 using BolaoTeste.Models;
-using Microsoft.AspNetCore.Http.Connections;
+
 
 namespace BolaoTeste.Profiles
 {

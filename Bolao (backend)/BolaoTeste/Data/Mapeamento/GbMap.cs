@@ -14,7 +14,11 @@ namespace BolaoTeste.Data.Mapeamento
                 Map(x => x.Iram).Column("IRAM");
                 Map(x => x.Usa).Column("USA");
                 Map(x => x.Inglaterra).Column("INGLATERRA");
-            }
+                Map(x => x.PaisDeGalesPontos).Column("PAISDEGALESPONTOS");
+                Map(x => x.IramPontos).Column("IRAMPONTOS");
+                Map(x => x.UsaPontos).Column("USAPONTOS");
+                Map(x => x.InglaterraPontos).Column("INGLATERRAPONTOS");
+        }
         }
     
 }

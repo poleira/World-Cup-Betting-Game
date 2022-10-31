@@ -39,6 +39,7 @@ namespace BolaoTeste.Aplicacao.Cadastros.Servicos
             var semis = new Semis();
             var finais = new Finais();
             var jogosDoBr = new Jogos_BR();
+            var campeao = new Campeao();
             Cadastro cadastroInserir = mapper.Map<Cadastro>(inserirRequest);
             cadastroInserir.Ga = ga;
             cadastroInserir.Gb = gb;
@@ -53,6 +54,7 @@ namespace BolaoTeste.Aplicacao.Cadastros.Servicos
             cadastroInserir.Semis = semis;
             cadastroInserir.Finais = finais;
             cadastroInserir.Jogos_BR = jogosDoBr;
+            cadastroInserir.Campeao = campeao;
 
             var transacao = session.BeginTransaction();            
             try

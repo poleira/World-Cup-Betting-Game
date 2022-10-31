@@ -14,6 +14,7 @@ namespace BolaoTeste.Data.Repositorios
                                         INNER JOIN -G- ON -Idg- = -G-.ID
                                         INNER JOIN oitavas ON IDOITAVAS = OITAVAS.ID
                                         SET -Time1- = @Resp1, -Time2- = @Resp2, -Time3- = @Resp3, -Time4- = @Resp4,
+                                        -Time1-Pontos = @Pontos1, -Time2-Pontos = @Pontos2, -Time3-Pontos = @Pontos3, -Time4-Pontos = @Pontos4,
                                         -TIMEX1- = @selecao1, -TIMEX2- = @selecao2
                                         WHERE
                                         usuario = @usuario";
@@ -39,6 +40,10 @@ namespace BolaoTeste.Data.Repositorios
             parameters.Add("@Resp2", request.Holanda);
             parameters.Add("@Resp3", request.Equador);
             parameters.Add("@Resp4", request.Qatar);
+            parameters.Add("@Pontos1", request.SenegalPontos);
+            parameters.Add("@Pontos2", request.HolandaPontos);
+            parameters.Add("@Pontos3", request.EquadorPontos);
+            parameters.Add("@Pontos4", request.QatarPontos);
             parameters.Add("@selecao1", primeiro);
             parameters.Add("@selecao2", segundo);
             parameters.Add("@usuario", request.Usuario);
@@ -61,6 +66,10 @@ namespace BolaoTeste.Data.Repositorios
             parameters.Add("@Resp2", request.Iram);
             parameters.Add("@Resp3", request.USA);
             parameters.Add("@Resp4", request.PaisDeGales);
+            parameters.Add("@Pontos1", request.InglaterraPontos);
+            parameters.Add("@Pontos2", request.IramPontos);
+            parameters.Add("@Pontos3", request.USAPontos);
+            parameters.Add("@Pontos4", request.PaisDeGalesPontos);
             parameters.Add("@selecao1", primeiro);
             parameters.Add("@selecao2", segundo);
             parameters.Add("@usuario", request.Usuario);
@@ -82,6 +91,10 @@ namespace BolaoTeste.Data.Repositorios
             parameters.Add("@Resp2", request.ArabiaSaudita);
             parameters.Add("@Resp3", request.Mexico);
             parameters.Add("@Resp4", request.Polonia);
+            parameters.Add("@Pontos1", request.ArgentinaPontos);
+            parameters.Add("@Pontos2", request.ArabiaSauditaPontos);
+            parameters.Add("@Pontos3", request.MexicoPontos);
+            parameters.Add("@Pontos4", request.PoloniaPontos);
             parameters.Add("@selecao1", primeiro);
             parameters.Add("@selecao2", segundo);
             parameters.Add("@usuario", request.Usuario);
@@ -103,6 +116,10 @@ namespace BolaoTeste.Data.Repositorios
             parameters.Add("@Resp2", request.Australia);
             parameters.Add("@Resp3", request.Dinamarca);
             parameters.Add("@Resp4", request.Tunisia);
+            parameters.Add("@Pontos1", request.FrancaPontos);
+            parameters.Add("@Pontos2", request.AustraliaPontos);
+            parameters.Add("@Pontos3", request.DinamarcaPontos);
+            parameters.Add("@Pontos4", request.TunisiaPontos);
             parameters.Add("@selecao1", primeiro);
             parameters.Add("@selecao2", segundo);
             parameters.Add("@usuario", request.Usuario);
@@ -124,6 +141,10 @@ namespace BolaoTeste.Data.Repositorios
             parameters.Add("@Resp2", request.CostaRica);
             parameters.Add("@Resp3", request.Alemanha);
             parameters.Add("@Resp4", request.Japao);
+            parameters.Add("@Pontos1", request.EspanhaPontos);
+            parameters.Add("@Pontos2", request.CostaRicaPontos);
+            parameters.Add("@Pontos3", request.AlemanhaPontos);
+            parameters.Add("@Pontos4", request.JapaoPontos);
             parameters.Add("@selecao1", primeiro);
             parameters.Add("@selecao2", segundo);
             parameters.Add("@usuario", request.Usuario);
@@ -145,6 +166,10 @@ namespace BolaoTeste.Data.Repositorios
             parameters.Add("@Resp2", request.Canada);
             parameters.Add("@Resp3", request.Marrocos);
             parameters.Add("@Resp4", request.Croacia);
+            parameters.Add("@Pontos1", request.BelgicaPontos);
+            parameters.Add("@Pontos2", request.CanadaPontos);
+            parameters.Add("@Pontos3", request.MarrocosPontos);
+            parameters.Add("@Pontos4", request.CroaciaPontos);
             parameters.Add("@selecao1", primeiro);
             parameters.Add("@selecao2", segundo);
             parameters.Add("@usuario", request.Usuario);
@@ -166,6 +191,10 @@ namespace BolaoTeste.Data.Repositorios
             parameters.Add("@Resp2", request.Servia);
             parameters.Add("@Resp3", request.Suica);
             parameters.Add("@Resp4", request.Camaroes);
+            parameters.Add("@Pontos1", request.BrasilPontos);
+            parameters.Add("@Pontos2", request.ServiaPontos);
+            parameters.Add("@Pontos3", request.SuicaPontos);
+            parameters.Add("@Pontos4", request.CamaroesPontos);
             parameters.Add("@selecao1", primeiro);
             parameters.Add("@selecao2", segundo);
             parameters.Add("@usuario", request.Usuario);
@@ -187,6 +216,10 @@ namespace BolaoTeste.Data.Repositorios
             parameters.Add("@Resp2", request.Gana);
             parameters.Add("@Resp3", request.Uruguai);
             parameters.Add("@Resp4", request.CoreiaDoSul);
+            parameters.Add("@Pontos1", request.PortugalPontos);
+            parameters.Add("@Pontos2", request.GanaPontos);
+            parameters.Add("@Pontos3", request.UruguaiPontos);
+            parameters.Add("@Pontos4", request.CoreiaDoSulPontos);
             parameters.Add("@selecao1", primeiro);
             parameters.Add("@selecao2", segundo);
             parameters.Add("@usuario", request.Usuario);

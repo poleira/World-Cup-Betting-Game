@@ -221,7 +221,11 @@ CREATE TABLE GD (
                 FRANCA INT(2),
                 AUSTRALIA INT(2),
                 DINAMARCA INT(2),
-                TUNISIA INT(2)
+                TUNISIA INT(2),
+                FRANCAPONTOS INT(2),
+                AUSTRALIAPONTOS INT(2),
+                DINAMARCAPONTOS INT(2),
+                TUNISIAPONTOS INT(2)
 );
 
 
@@ -232,7 +236,11 @@ ID int NOT NULL AUTO_INCREMENT,
                 PORTUGAL INT(2),
                 GANA INT(2),
                 URUGUAI INT(2),
-                COREIADOSUL INT(2)
+                COREIADOSUL INT(2),
+				PORTUGALPONTOS INT(2),
+                GANAPONTOS INT(2),
+                URUGUAIPONTOS INT(2),
+                COREIADOSULPONTOS INT(2)
 );
 
 
@@ -258,7 +266,11 @@ ID int NOT NULL AUTO_INCREMENT,
                 ARGENTINA INT(2),
                 ARABIASAUDITA INT(2),
                 MEXICO INT(2),
-                POLONIA INT(2)
+                POLONIA INT(2),
+				ARGENTINAPONTOS INT(2),
+                ARABIASAUDITAPONTOS INT(2),
+                MEXICOPONTOS INT(2),
+                POLONIAPONTOS INT(2)
 );
 
 
@@ -268,7 +280,11 @@ ID int NOT NULL AUTO_INCREMENT,
                 BRASIL INT(2),
                 SERVIA INT(2),
                 SUICA INT(2),
-                CAMAROES INT(2)
+                CAMAROES INT(2),
+                BRASILPONTOS INT(2),
+                SERVIAPONTOS INT(2),
+                SUICAPONTOS INT(2),
+                CAMAROESPONTOS INT(2)
 );
 
 
@@ -278,7 +294,11 @@ ID int NOT NULL AUTO_INCREMENT,
                 BELGICA INT(2),
                 CANADA INT(2),
                 MARROCOS INT(2),
-                CROACIA INT(2)
+                CROACIA INT(2),
+                BELGICAPONTOS INT(2),
+                CANADAPONTOS INT(2),
+                MARROCOSPONTOS INT(2),
+                CROACIAPONTOS INT(2)
 );
 
 
@@ -288,7 +308,11 @@ ID int NOT NULL AUTO_INCREMENT,
                 INGLATERRA INT(2),
                 IRAM INT(2),
                 USA INT(2),
-                PAISDEGALES INT(2)
+                PAISDEGALES INT(2),
+                INGLATERRAPONTOS INT(2),
+                IRAMPONTOS INT(2),
+                USAPONTOS INT(2),
+                PAISDEGALESPONTOS INT(2)
 );
 
 
@@ -320,7 +344,11 @@ ID int NOT NULL AUTO_INCREMENT,
                 ESPANHA INT(2),
                 COSTARICA INT(2),
                 ALEMANHA INT(2),
-                JAPAO INT(2)
+                JAPAO INT(2),
+                ESPANHAPONTOS INT(2),
+                COSTARICAPONTOS INT(2),
+                ALEMANHAPONTOS INT(2),
+                JAPAOPONTOS INT(2)
 );
 
 
@@ -330,7 +358,11 @@ ID int(2) NOT NULL AUTO_INCREMENT,
                 QATAR INT(2),
                 EQUADOR INT(2),
                 SENEGAL INT(2),
-                HOLANDA INT(2)
+                HOLANDA INT(2),
+                QATARPONTOS INT(2),
+                EQUADORPONTOS INT(2),
+                SENEGALPONTOS INT(2),
+                HOLANDAPONTOS INT(2)
 );
 
 CREATE TABLE CADASTRO (

@@ -14,6 +14,10 @@ namespace BolaoTeste.Data.Mapeamento
             Map(x => x.Canada).Column("CANADA");
             Map(x => x.Marrocos).Column("MARROCOS");
             Map(x => x.Belgica).Column("BELGICA");
+            Map(x => x.CroaciaPontos).Column("CROACIAPONTOS");
+            Map(x => x.CanadaPontos).Column("CANADAPONTOS");
+            Map(x => x.MarrocosPontos).Column("MARROCOSPONTOS");
+            Map(x => x.BelgicaPontos).Column("BELGICAPONTOS");
         }
     }
 }

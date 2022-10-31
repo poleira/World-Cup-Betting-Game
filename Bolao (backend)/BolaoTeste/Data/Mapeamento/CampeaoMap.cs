@@ -10,7 +10,7 @@ namespace BolaoTeste.Data.Mapeamento
             Schema("teste");
             Table("campeao");
             Id(x => x.Id).Column("ID");
-            Map(x => x.Time).Column("QATAR");
+            Map(x => x.Time).Column("TIME");
         }
     }
 }

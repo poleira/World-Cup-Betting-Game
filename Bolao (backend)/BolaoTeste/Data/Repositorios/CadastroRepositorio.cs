@@ -22,7 +22,7 @@ namespace BolaoTeste.Data.Repositorios
 
         public Cadastro Editar(Cadastro cadastro)
         {
-            session.Update(cadastro);
+            session.Merge(cadastro);
             return cadastro;
         }
 

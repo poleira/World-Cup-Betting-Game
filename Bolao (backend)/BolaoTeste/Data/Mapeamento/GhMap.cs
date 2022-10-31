@@ -14,6 +14,10 @@ namespace BolaoTeste.Data.Mapeamento
             Map(x => x.Portugal).Column("PORTUGAL");
             Map(x => x.Uruguai).Column("URUGUAI");
             Map(x => x.Gana).Column("GANA");
+            Map(x => x.CoreiaDoSulPontos).Column("COREIADOSULPONTOS");
+            Map(x => x.PortugalPontos).Column("PORTUGALPONTOS");
+            Map(x => x.UruguaiPontos).Column("URUGUAIPONTOS");
+            Map(x => x.GanaPontos).Column("GANAPONTOS");
         }
     }
 }

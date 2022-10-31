@@ -24,12 +24,12 @@ namespace BolaoTeste.Data.Mapeamento
             References(x => x.Gf).Column("IDGF").Cascade.All();
             References(x => x.Gg).Column("IDGG").Cascade.All();
             References(x => x.Gh).Column("IDGH").Cascade.All();
-            References(x => x.Oitavas).Column("IDOITAVAS").Cascade.All();
-            References(x => x.Quartas).Column("IDQUARTAS").Cascade.All();
-            References(x => x.Semis).Column("IDSEMIS").Cascade.All();
-            References(x => x.Finais).Column("IDFINAIS").Cascade.All();
-            References(x => x.Campeao).Column("IDCAMPEAO").Cascade.All();
-            References(x => x.Jogos_BR).Column("IDJOGOSDOBR").Cascade.All();
+            References(x => x.Oitavas).Column("IDOITAVAS").Cascade.All().LazyLoad();
+            References(x => x.Quartas).Column("IDQUARTAS").Cascade.All().LazyLoad();
+            References(x => x.Semis).Column("IDSEMIS").Cascade.All().LazyLoad();
+            References(x => x.Finais).Column("IDFINAIS").Cascade.All().LazyLoad();
+            References(x => x.Campeao).Column("IDCAMPEAO").Cascade.All().LazyLoad();
+            References(x => x.Jogos_BR).Column("IDJOGOSDOBR").Cascade.All().LazyLoad();
 
         }
     }

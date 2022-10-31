@@ -2,8 +2,11 @@
 using BolaoTeste.Aplicacao.Palpites.Servicos.Interfaces;
 using BolaoTeste.Data.Interfaces;
 using BolaoTeste.Data.Repositorios.Interfaces;
+using BolaoTeste.Dto;
+using BolaoTeste.Dto.ListarPalpite;
 using BolaoTeste.Dto.Palpites;
 using BolaoTeste.Models;
+using Microsoft.AspNetCore.Mvc;
 using ISession = NHibernate.ISession;
 
 namespace BolaoTeste.Aplicacao.Palpites.Servicos
@@ -23,7 +26,65 @@ namespace BolaoTeste.Aplicacao.Palpites.Servicos
             this.palpiteRepositorio = palpiteRepositorio;
         }
 
-        public Cadastro EditaGa(GaEditarRequest request)
+        public OkResponse EditaCampeao(CampeaoEditarRequest request)
+        {
+            var campeao = mapper.Map<Campeao>(request);
+            var queryUsuario = cadastroRepositorio.Query().Where(r => r.Usuario == request.Usuario).ToList();
+            var transacao = session.BeginTransaction();
+            try
+            {
+                foreach (var item in queryUsuario)
+                {
+                    campeao.Id = item.Campeao.Id;
+                    item.Campeao = campeao;
+                    //
+                    cadastroRepositorio.Editar(item);
+                    if (transacao.IsActive)
+                        transacao.Commit();
+                    return new OkResponse { Ok = "Ok" };
+                }
+
+                return null;
+
+            }
+            catch
+            {
+                if (transacao.IsActive)
+                    transacao.Rollback();
+                return null;
+            }
+        }
+
+        public OkResponse EditaFinais(FinaisEditarRequest request)
+        {
+            var finais = mapper.Map<Finais>(request);
+            var queryUsuario = cadastroRepositorio.Query().Where(r => r.Usuario == request.Usuario).ToList();
+            var transacao = session.BeginTransaction();
+            try
+            {
+                foreach (var item in queryUsuario)
+                {
+                    finais.Id = item.Finais.Id;
+                    item.Finais = finais;
+                    
+                    cadastroRepositorio.Editar(item);
+                    if (transacao.IsActive)
+                        transacao.Commit();
+                    return new OkResponse { Ok = "Ok" };
+                }
+
+                return null;
+
+            }
+            catch
+            {
+                if (transacao.IsActive)
+                    transacao.Rollback();
+                return null;
+            }
+        }
+
+        public OkResponse EditaGa(GaEditarRequest request)
         {
             string gaString = "ga";
             string idgaString = "idga";
@@ -47,13 +108,29 @@ namespace BolaoTeste.Aplicacao.Palpites.Servicos
             if (request.Holanda == 2)
                 segundo = nameof(request.Holanda);
 
+
+
+
+            var transacao = session.BeginTransaction();
+            try
+            {
+
             palpiteRepositorio.EditarGa(request,idgaString,gaString, primeiro, segundo);
 
 
-            return null;
+                if (transacao.IsActive)
+                    transacao.Commit();
+                return new OkResponse { Ok = "Ok" };
+            }
+            catch
+            {
+                if (transacao.IsActive)
+                    transacao.Rollback();
+                return null;
+            }
         }
 
-        public Cadastro EditaGb(GbEditarRequest request)
+        public OkResponse EditaGb(GbEditarRequest request)
         {
             string gbString = "gb";
             string idgbString = "idgb";
@@ -77,12 +154,27 @@ namespace BolaoTeste.Aplicacao.Palpites.Servicos
             if (request.Iram == 2)
                 segundo = nameof(request.Iram);
 
+            var transacao = session.BeginTransaction();
+            try
+            {
+
+                
             palpiteRepositorio.EditarGb(request, idgbString, gbString,primeiro, segundo);
 
+                if (transacao.IsActive)
+                    transacao.Commit();
+                return new OkResponse { Ok = "Ok" };
+            }
+            catch
+            {
+                if (transacao.IsActive)
+                    transacao.Rollback();
+                return null;
+            }
 
-            return null;
+
         }
-        public Cadastro EditaGc(GcEditarRequest request)
+        public OkResponse EditaGc(GcEditarRequest request)
         {
             string gcString = "gc";
             string idgcString = "idgc";
@@ -106,12 +198,27 @@ namespace BolaoTeste.Aplicacao.Palpites.Servicos
             if (request.Polonia == 2)
                 segundo = nameof(request.Polonia);
 
+
+
+            var transacao = session.BeginTransaction();
+            try
+            {
+
             palpiteRepositorio.EditarGc(request, idgcString, gcString, primeiro, segundo);
 
 
-            return null;
+                if (transacao.IsActive)
+                    transacao.Commit();
+                return new OkResponse { Ok = "Ok" };
+            }
+            catch
+            {
+                if (transacao.IsActive)
+                    transacao.Rollback();
+                return null;
+            }
         }
-        public Cadastro EditaGd(GdEditarRequest request)
+        public OkResponse EditaGd(GdEditarRequest request)
         {
             string gdString = "gd";
             string idgdString = "idgd";
@@ -135,12 +242,27 @@ namespace BolaoTeste.Aplicacao.Palpites.Servicos
             if (request.Tunisia == 2)
                 segundo = nameof(request.Tunisia);
 
+
+
+            var transacao = session.BeginTransaction();
+            try
+            {
+
             palpiteRepositorio.EditarGd(request, idgdString, gdString, primeiro, segundo);
 
-
-            return null;
+                if (transacao.IsActive)
+                    transacao.Commit();
+                return new OkResponse { Ok = "Ok" };
+            }
+            catch
+            {
+                if (transacao.IsActive)
+                    transacao.Rollback();
+                return null;
+            }
         }
-        public Cadastro EditaGe(GeEditarRequest request)
+    
+        public OkResponse EditaGe(GeEditarRequest request)
         {
             string geString = "ge";
             string idgeString = "idge";
@@ -164,12 +286,24 @@ namespace BolaoTeste.Aplicacao.Palpites.Servicos
             if (request.Japao == 2)
                 segundo = nameof(request.Japao);
 
-            palpiteRepositorio.EditarGe(request, idgeString, geString, primeiro,segundo);
+            var transacao = session.BeginTransaction();
+            try
+            {
 
+                palpiteRepositorio.EditarGe(request, idgeString, geString, primeiro, segundo);
+                if (transacao.IsActive)
+                    transacao.Commit();
+                return new OkResponse { Ok = "Ok" };
+            }
+            catch
+            {
+                if (transacao.IsActive)
+                    transacao.Rollback();
+                return null;
+            }
 
-            return null;
         }
-        public Cadastro EditaGf(GfEditarRequest request)
+        public OkResponse EditaGf(GfEditarRequest request)
         {
             string gfString = "gf";
             string idgfString = "idgf";
@@ -193,12 +327,24 @@ namespace BolaoTeste.Aplicacao.Palpites.Servicos
             if (request.Marrocos == 2)
                 segundo = nameof(request.Marrocos);
 
-            palpiteRepositorio.EditarGf(request, idgfString, gfString,primeiro,segundo);
 
+            var transacao = session.BeginTransaction();
+            try
+            {
 
-            return null;
+                palpiteRepositorio.EditarGf(request, idgfString, gfString, primeiro, segundo);
+                if (transacao.IsActive)
+                    transacao.Commit();
+                return new OkResponse { Ok = "Ok" };
+            }
+            catch
+            {
+                if (transacao.IsActive)
+                    transacao.Rollback();
+                return null;
+            }
         }
-        public Cadastro EditaGg(GgEditarRequest request)
+        public OkResponse EditaGg(GgEditarRequest request)
         {
             string ggString = "gg";
             string idggString = "idgg";
@@ -222,12 +368,24 @@ namespace BolaoTeste.Aplicacao.Palpites.Servicos
             if (request.Camaroes == 2)
                 segundo = nameof(request.Camaroes);
 
-            palpiteRepositorio.EditarGg(request, idggString, ggString, primeiro, segundo);
 
+            var transacao = session.BeginTransaction();
+            try
+            {
 
-            return null;
+                palpiteRepositorio.EditarGg(request, idggString, ggString, primeiro, segundo);
+                if (transacao.IsActive)
+                    transacao.Commit();
+                return new OkResponse { Ok = "Ok" };
+            }
+            catch
+            {
+                if (transacao.IsActive)
+                    transacao.Rollback();
+                return null;
+            }
         }
-        public Cadastro EditaGh(GhEditarRequest request)
+        public OkResponse EditaGh(GhEditarRequest request)
         {
             string ghString = "gh";
             string idghString = "idgh";
@@ -251,11 +409,124 @@ namespace BolaoTeste.Aplicacao.Palpites.Servicos
             if (request.CoreiaDoSul == 2)
                 segundo = nameof(request.CoreiaDoSul);
 
+
+
+            var transacao = session.BeginTransaction();
+            try
+            {
+
             palpiteRepositorio.EditarGh(request, idghString, ghString,primeiro,segundo);
-
-
-            return null;
+                
+                if (transacao.IsActive)
+                    transacao.Commit();
+                return new OkResponse { Ok = "Ok" };
+            }
+            catch
+            {
+                if (transacao.IsActive)
+                    transacao.Rollback();
+                return null;
+            }
         }
+
+        public OkResponse EditaJogosDoBr(JogosDoBrEditarRequest request)
+        {
+            var jogosDoBr = mapper.Map<Jogos_BR>(request);
+            var queryUsuario = cadastroRepositorio.Query().Where(r => r.Usuario == request.Usuario).ToList();
+            var transacao = session.BeginTransaction();
+            try
+            {
+                foreach (var item in queryUsuario)
+                {
+                    jogosDoBr.Id = item.Jogos_BR.Id;
+                    item.Jogos_BR = jogosDoBr;
+                    
+                    cadastroRepositorio.Editar(item);
+                    if (transacao.IsActive)
+                        transacao.Commit();
+                    return new OkResponse { Ok = "Ok" };
+                }
+
+                return null;
+
+            }
+            catch
+            {
+                if (transacao.IsActive)
+                    transacao.Rollback();
+                return null;
+            }
+        }
+
+        public OkResponse EditaQuartas (QuartasEditarRequest request)
+        {
+            var quartas = mapper.Map<Quartas>(request);
+            var queryUsuario = cadastroRepositorio.Query().Where(r => r.Usuario == request.Usuario).ToList();
+            var transacao = session.BeginTransaction();
+            try
+            {
+                foreach (var item in queryUsuario)
+                {
+                    quartas.Id = item.Quartas.Id;
+                    item.Quartas = quartas;
+                    
+                    cadastroRepositorio.Editar(item);
+                    if (transacao.IsActive)
+                        transacao.Commit();
+                    return new OkResponse { Ok = "Ok" };
+                }
+
+                return null;
+
+            }
+            catch
+            {
+                if (transacao.IsActive)
+                    transacao.Rollback();
+                return null;
+            }
+        }
+
+        public OkResponse EditaSemis(SemisEditarRequest request)
+        {
+            var semis = mapper.Map<Semis>(request);
+            var queryUsuario = cadastroRepositorio.Query().Where(r => r.Usuario == request.Usuario).ToList();
+            var transacao = session.BeginTransaction();
+            try
+            {
+                foreach (var item in queryUsuario)
+                {
+                    semis.Id = item.Semis.Id;
+                    item.Semis = semis;
+                    
+                    cadastroRepositorio.Editar(item);
+                    if (transacao.IsActive)
+                        transacao.Commit();
+                    return new OkResponse { Ok = "Ok" };
+                }
+
+                return null;
+
+            }
+            catch
+            {
+                if (transacao.IsActive)
+                    transacao.Rollback();
+                return null;
+            }
+        }
+
+        public ListarPalpiteResponse ListarPalpites(ListarPalpiteRequest request)
+        {
+            var queryUsuario = cadastroRepositorio.Query().Where(r => r.Usuario == request.Usuario).ToList();
+            foreach (var item in queryUsuario)
+            {
+                var retorno = mapper.Map<ListarPalpiteResponse>(item);
+                return retorno;
+            }
+            throw new Exception("Usuario nao encontrado");
+        }
+    }
 
 
 
@@ -264,4 +535,4 @@ namespace BolaoTeste.Aplicacao.Palpites.Servicos
 
 
     }
-}
+

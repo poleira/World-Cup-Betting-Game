@@ -11,6 +11,7 @@ namespace BolaoTeste.Models
         public virtual string semis {get; set;}
         public virtual string final {get; set;}
 
+
         public Jogos_BR()
         {
 

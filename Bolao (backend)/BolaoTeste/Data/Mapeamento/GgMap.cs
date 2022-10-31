@@ -14,6 +14,10 @@ namespace BolaoTeste.Data.Mapeamento
             Map(x => x.Camaroes).Column("CAMAROES");
             Map(x => x.Suica).Column("SUICA");
             Map(x => x.Brasil).Column("BRASIL");
+            Map(x => x.ServiaPontos).Column("SERVIAPONTOS");
+            Map(x => x.CamaroesPontos).Column("CAMAROESPONTOS");
+            Map(x => x.SuicaPontos).Column("SUICAPONTOS");
+            Map(x => x.BrasilPontos).Column("BRASILPONTOS");
         }
     }
 }

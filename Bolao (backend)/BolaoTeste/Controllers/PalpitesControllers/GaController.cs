@@ -1,4 +1,4 @@
-﻿using BolaoTeste.Aplicacao.Cadastros.Servicos.Interfaces;
+﻿
 using BolaoTeste.Aplicacao.Palpites.Servicos.Interfaces;
 using BolaoTeste.Dto.Palpites;
 using Microsoft.AspNetCore.Cors;
