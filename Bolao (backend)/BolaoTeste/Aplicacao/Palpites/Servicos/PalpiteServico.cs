@@ -37,7 +37,7 @@ namespace BolaoTeste.Aplicacao.Palpites.Servicos
                 {
                     campeao.Id = item.Campeao.Id;
                     item.Campeao = campeao;
-                    //
+                    
                     cadastroRepositorio.Editar(item);
                     if (transacao.IsActive)
                         transacao.Commit();

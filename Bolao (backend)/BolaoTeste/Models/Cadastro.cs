@@ -1,7 +1,4 @@
 ﻿
-
-using Dotnet.Entities;
-
 namespace BolaoTeste.Models
 {
     public class Cadastro

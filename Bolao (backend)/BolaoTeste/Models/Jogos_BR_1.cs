@@ -1,4 +1,4 @@
-namespace Dotnet.Entities
+namespace BolaoTeste.Models
 {
     public class Jogos_BR_1
     {

@@ -104,7 +104,7 @@
         public string SemisTime4 { get; set; }
         public string FinaisTime1 { get; set; }
         public string FinaisTime2 { get; set; }
-        public string FinalTime { get; set; }
+        public string Campeao { get; set; }
 
     }
 }

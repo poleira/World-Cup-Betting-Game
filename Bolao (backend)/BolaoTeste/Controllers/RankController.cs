@@ -21,7 +21,7 @@ namespace BolaoTeste.Controllers
             this.rankServico = rankServico;
         }
 
-        [HttpGet, Authorize]
+        [HttpGet]
         public ActionResult<IList<RankResponse>> ListarRank()
         {
             var retorno = rankServico.ListarRank();

@@ -1,59 +1,140 @@
 
-CREATE TABLE CAMPEONATO (
 
-                CODCAMPEONATO int NOT NULL AUTO_INCREMENT,
-                NOME_CAMPEONATO VARCHAR(15) NOT NULL,
-                USUARIO VARCHAR(18) NOT NULL,
-                SENHA VARCHAR(10) NOT NULL,
-                PRIMARY KEY (CODCAMPEONATO)
+CREATE TABLE QUARTAS_1 (
+ID int NOT NULL AUTO_INCREMENT,
+                primary key(ID),
+                TIME1 VARCHAR(25),
+                TIME2 VARCHAR(25),
+                TIME3 VARCHAR(25),
+                TIME4 VARCHAR(25),
+                TIME5 VARCHAR(25),
+                TIME6 VARCHAR(25),
+                TIME7 VARCHAR(25),
+                TIME8 VARCHAR(25)
 );
-
 
 CREATE TABLE SEMIS_1 (
 ID int NOT NULL AUTO_INCREMENT,
                 primary key(ID),
-                TIME1 VARCHAR(25) NOT NULL,
-                TIME2 VARCHAR(25) NOT NULL,
-                TIME3 VARCHAR(25) NOT NULL,
-                TIME4 VARCHAR(25) NOT NULL,
-                CODCAMPEONATO INT NOT NULL
+                TIME4 VARCHAR(25),
+                TIME3 VARCHAR(25),
+                TIME2 VARCHAR(25),
+                TIME1 VARCHAR(25)
+);
+
+CREATE TABLE JOGOSDOBR_1 (
+ID int NOT NULL AUTO_INCREMENT,
+                primary key(ID),
+                JOGO1 VARCHAR(2),
+                JOGO2 VARCHAR(2),
+                JOGO3 VARCHAR(2),
+                OITAVAS VARCHAR(2),
+                QUARTAS VARCHAR(2),
+                SEMIS VARCHAR(2),
+                FINAL VARCHAR(2)
+                
+);
+
+
+CREATE TABLE GD_1 (
+				ID int NOT NULL AUTO_INCREMENT,
+                primary key(ID),
+                
+                FRANCA INT(2),
+                AUSTRALIA INT(2),
+                DINAMARCA INT(2),
+                TUNISIA INT(2),
+                FRANCAPONTOS INT(2),
+                AUSTRALIAPONTOS INT(2),
+                DINAMARCAPONTOS INT(2),
+                TUNISIAPONTOS INT(2)
+);
+
+
+CREATE TABLE GH_1 (
+ID int NOT NULL AUTO_INCREMENT,
+                primary key(ID),
+
+                PORTUGAL INT(2),
+                GANA INT(2),
+                URUGUAI INT(2),
+                COREIADOSUL INT(2),
+				PORTUGALPONTOS INT(2),
+                GANAPONTOS INT(2),
+                URUGUAIPONTOS INT(2),
+                COREIADOSULPONTOS INT(2)
 );
 
 
 CREATE TABLE CAMPEAO_1 (
 ID int NOT NULL AUTO_INCREMENT,
                 primary key(ID),
-                TIME VARCHAR(25) NOT NULL,
-                CODCAMPEONATO INT NOT NULL
+                TIME VARCHAR(25)
+
 );
 
 
-CREATE TABLE JOGOS_BR_1 (
+CREATE TABLE FINAIS_1 (
 ID int NOT NULL AUTO_INCREMENT,
                 primary key(ID),
-                JOGO1 VARCHAR(2) NOT NULL,
-                JOGO2 VARCHAR(2) NOT NULL,
-                JOGO3 VARCHAR(2) NOT NULL,
-                OITAVAS VARCHAR(2) NOT NULL,
-                QUARTAS VARCHAR(2) NOT NULL,
-                SEMIS VARCHAR(2) NOT NULL,
-                FINAL VARCHAR(2) NOT NULL,
-                CODCAMPEONATO INT NOT NULL
+                TIME1 VARCHAR(25),
+                TIME2 VARCHAR(25)
 );
 
 
-CREATE TABLE QUARTAS_1 (
+CREATE TABLE GC_1 (
 ID int NOT NULL AUTO_INCREMENT,
                 primary key(ID),
-                TIME1 VARCHAR(25) NOT NULL,
-                TIME2 VARCHAR(25) NOT NULL,
-                TIME3 VARCHAR(25) NOT NULL,
-                TIME4 VARCHAR(25) NOT NULL,
-                TIME5 VARCHAR(25) NOT NULL,
-                TIME6 VARCHAR(25) NOT NULL,
-                TIME7 VARCHAR(25) NOT NULL,
-                TIME8 VARCHAR(25) NOT NULL,
-                CODCAMPEONATO INT NOT NULL
+                ARGENTINA INT(2),
+                ARABIASAUDITA INT(2),
+                MEXICO INT(2),
+                POLONIA INT(2),
+				ARGENTINAPONTOS INT(2),
+                ARABIASAUDITAPONTOS INT(2),
+                MEXICOPONTOS INT(2),
+                POLONIAPONTOS INT(2)
+);
+
+
+CREATE TABLE GG_1 (
+ID int NOT NULL AUTO_INCREMENT,
+                primary key(ID),
+                BRASIL INT(2),
+                SERVIA INT(2),
+                SUICA INT(2),
+                CAMAROES INT(2),
+                BRASILPONTOS INT(2),
+                SERVIAPONTOS INT(2),
+                SUICAPONTOS INT(2),
+                CAMAROESPONTOS INT(2)
+);
+
+
+CREATE TABLE GF_1 (
+ID int NOT NULL AUTO_INCREMENT,
+                primary key(ID),
+                BELGICA INT(2),
+                CANADA INT(2),
+                MARROCOS INT(2),
+                CROACIA INT(2),
+                BELGICAPONTOS INT(2),
+                CANADAPONTOS INT(2),
+                MARROCOSPONTOS INT(2),
+                CROACIAPONTOS INT(2)
+);
+
+
+CREATE TABLE GB_1 (
+ID int NOT NULL AUTO_INCREMENT,
+                primary key(ID),
+                INGLATERRA INT(2),
+                IRAM INT(2),
+                USA INT(2),
+                PAISDEGALES INT(2),
+                INGLATERRAPONTOS INT(2),
+                IRAMPONTOS INT(2),
+                USAPONTOS INT(2),
+                PAISDEGALESPONTOS INT(2)
 );
 
 
@@ -75,108 +156,73 @@ ID int NOT NULL AUTO_INCREMENT,
                 TIME13 VARCHAR(25),
                 TIME14 VARCHAR(25),
                 TIME15 VARCHAR(25),
-                TIME16 VARCHAR(25),
-                CODCAMPEONATO INT NOT NULL
-);
-
-
-CREATE TABLE FINAIS_1 (
-ID int NOT NULL AUTO_INCREMENT,
-                primary key(ID),
-                TIME1 VARCHAR(25) NOT NULL,
-                TIME2 VARCHAR(25) NOT NULL,
-                CODCAMPEONATO INT NOT NULL
-);
-
-
-CREATE TABLE GA_1 (
-ID int NOT NULL AUTO_INCREMENT,
-                primary key(ID),
-                CODCAMPEONATO INT NOT NULL,
-                QATAR INT(2),
-                EQUADOR INT(2),
-                SENEGAL INT(2),
-                HOLANDA INT(2)
-);
-
-
-CREATE TABLE GC_1 (
-ID int NOT NULL AUTO_INCREMENT,
-                primary key(ID),
-                CODCAMPEONATO INT NOT NULL,
-                ARGENTINA INT(2),
-                ARABIASAUDITA INT(2),
-                MEXICO INT(2),
-                POLONIA INT(2)
-);
-
-
-CREATE TABLE GF_1 (
-ID int NOT NULL AUTO_INCREMENT,
-                primary key(ID),
-                CODCAMPEONATO INT NOT NULL,
-                BELGICA INT(2),
-                CANADA INT(2),
-                MARROCOS INT(2),
-                CROACIA INT(2)
-);
-
-
-CREATE TABLE GH_1 (
-ID int NOT NULL AUTO_INCREMENT,
-                primary key(ID),
-                CODCAMPEONATO INT NOT NULL,
-                PORTUGAL INT(2),
-                GANA INT(2),
-                URUGUAI INT(2),
-                COREIADOSUL INT(2)
-);
-
-
-CREATE TABLE GB_1 (
-ID int NOT NULL AUTO_INCREMENT,
-                primary key(ID),
-                CODCAMPEONATO INT NOT NULL,
-                INGLATERRA INT(2),
-                IRAM INT(2),
-                USA INT(2),
-                PAISDEGALES INT(2)
+                TIME16 VARCHAR(25)
 );
 
 
 CREATE TABLE GE_1 (
 ID int NOT NULL AUTO_INCREMENT,
                 primary key(ID),
-                CODCAMPEONATO INT NOT NULL,
                 ESPANHA INT(2),
                 COSTARICA INT(2),
                 ALEMANHA INT(2),
-                JAPAO INT(2)
+                JAPAO INT(2),
+                ESPANHAPONTOS INT(2),
+                COSTARICAPONTOS INT(2),
+                ALEMANHAPONTOS INT(2),
+                JAPAOPONTOS INT(2)
 );
 
 
-CREATE TABLE GD_1 (
-ID int NOT NULL AUTO_INCREMENT,
+CREATE TABLE GA_1 (
+ID int(2) NOT NULL AUTO_INCREMENT,
                 primary key(ID),
-                FRANCA INT(2),
-                AUSTRALIA INT(2),
-                DINAMARCA INT(2),
-                TUNISIA INT(2),
-                CODCAMPEONATO INT NOT NULL
+                QATAR INT(2),
+                EQUADOR INT(2),
+                SENEGAL INT(2),
+                HOLANDA INT(2),
+                QATARPONTOS INT(2),
+                EQUADORPONTOS INT(2),
+                SENEGALPONTOS INT(2),
+                HOLANDAPONTOS INT(2)
 );
 
+CREATE TABLE CAMPEONATO (
 
-CREATE TABLE GG_1 (
-ID int NOT NULL AUTO_INCREMENT,
-                primary key(ID),
-                CODCAMPEONATO INT NOT NULL,
-                BRASIL INT(2),
-                SERVIA INT(2),
-                SUICA INT(2),
-                CAMAROES INT(2)
+                CODCAMPEONATO int NOT NULL AUTO_INCREMENT,
+                NOME_CAMPEONATO VARCHAR(15) NOT NULL,
+                USUARIO VARCHAR(18) NOT NULL,
+                SENHA VARCHAR(10) NOT NULL,
+                IDGA_1 int(2),
+                IDGB_1 INT(2),
+                IDGC_1 int(2),
+                IDGD_1 INT(2),
+                IDGE_1 int(2),
+                IDGF_1 INT(2),
+                IDGG_1 int(2),
+                IDGH_1 INT(2),
+                IDOITAVAS_1 int(2),
+                IDQUARTAS_1 int(2),
+                IDSEMIS_1 INT(2),
+                IDFINAIS_1 int(2),
+                IDJOGOSDOBR_1 INT(2),
+                IDCAMPEAO_1 INT(2),
+                FOREIGN KEY (IDGA_1) REFERENCES GA_1 (ID), 
+                FOREIGN KEY (IDGB_1) REFERENCES GB_1 (ID), 
+                FOREIGN KEY (IDGC_1) REFERENCES GC_1 (ID),
+                FOREIGN KEY (IDGD_1) REFERENCES GD_1 (ID),
+                FOREIGN KEY (IDGE_1) REFERENCES GE_1 (ID),
+                FOREIGN KEY (IDGF_1) REFERENCES GF_1 (ID),
+                FOREIGN KEY (IDGG_1) REFERENCES GG_1 (ID),
+                FOREIGN KEY (IDGH_1) REFERENCES GH_1 (ID),
+                FOREIGN KEY (IDOITAVAS_1) REFERENCES OITAVAS_1 (ID),
+                FOREIGN KEY (IDQUARTAS_1) REFERENCES QUARTAS_1 (ID),
+                FOREIGN KEY (IDSEMIS_1) REFERENCES SEMIS_1 (ID),
+                FOREIGN KEY (IDFINAIS_1) REFERENCES FINAIS_1 (ID),
+                FOREIGN KEY (IDJOGOSDOBR_1) REFERENCES JOGOSDOBR_1 (ID),
+                FOREIGN KEY (IDCAMPEAO_1) REFERENCES CAMPEAO_1 (ID), 
+                PRIMARY KEY (CODCAMPEONATO)
 );
-
-
 
 CREATE TABLE QUARTAS (
 ID int NOT NULL AUTO_INCREMENT,

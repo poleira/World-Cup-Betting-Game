@@ -77,6 +77,7 @@ builder.Services.AddSingleton<ISession>(factory => factory.GetService<ISessionFa
 
 builder.Services.AddSingleton<ICadastroRepositorio, CadastroRepositorio>();
 builder.Services.AddSingleton<IPalpiteRepositorio, PalpiteRepositorio>();
+builder.Services.AddSingleton<ICampeonatoRepositorio, CampeonatoRepositorio>();
 builder.Services.AddSingleton<ICadastroServico, CadastroServico>();
 builder.Services.AddSingleton<IRankServico, RankServico>();
 builder.Services.AddSingleton<IPalpiteServico, PalpiteServico>();
