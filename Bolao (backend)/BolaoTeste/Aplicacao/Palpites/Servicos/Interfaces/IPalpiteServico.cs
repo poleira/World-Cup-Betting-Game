@@ -21,6 +21,7 @@ namespace BolaoTeste.Aplicacao.Palpites.Servicos.Interfaces
         OkResponse EditaCampeao(CampeaoEditarRequest request);
         OkResponse EditaJogosDoBr(JogosDoBrEditarRequest request);
         ListarPalpiteResponse ListarPalpites(ListarPalpiteRequest request);
+        ListarOitavasResponse ListarOitavas(ListarOitavasRequest request);
 
 
     }

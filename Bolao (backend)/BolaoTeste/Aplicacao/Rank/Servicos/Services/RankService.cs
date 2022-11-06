@@ -7,7 +7,7 @@ namespace BolaoTeste.Aplicacao.Rank.Servicos.Services
     {
         public static IList<RankResponse> ListarRank(IList<ListarPalpiteResponse> listaPalpiteUsuario, ListarPalpiteResponse resultado)
         {
-
+            return null;
         }
     }
 }

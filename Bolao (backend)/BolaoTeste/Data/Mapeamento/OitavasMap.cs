@@ -7,6 +7,7 @@ namespace BolaoTeste.Data.Mapeamento
     {
         public OitavasMap()
         {
+            Not.LazyLoad();
             Schema("teste");
             Table("oitavas");
             Id(x => x.Id).Column("ID");

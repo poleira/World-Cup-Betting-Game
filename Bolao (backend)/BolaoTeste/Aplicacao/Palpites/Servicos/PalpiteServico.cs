@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using BolaoTeste.Aplicacao.Palpites.Services;
 using BolaoTeste.Aplicacao.Palpites.Servicos.Interfaces;
 using BolaoTeste.Data.Interfaces;
 using BolaoTeste.Data.Repositorios.Interfaces;
@@ -525,6 +526,14 @@ namespace BolaoTeste.Aplicacao.Palpites.Servicos
                 return retorno;
             }
             throw new Exception("Usuario nao encontrado");
+        }
+
+        public ListarOitavasResponse ListarOitavas(ListarOitavasRequest request)
+        {
+            var queryUsuario = cadastroRepositorio.Query().Where(r => r.Usuario == request.Usuario).FirstOrDefault();
+            var usuario = mapper.Map<ListarOitavasResponse>(queryUsuario);
+            usuario = TransformarEmSigla.TransformaEmSigla(usuario);
+            return usuario;
         }
     }
 

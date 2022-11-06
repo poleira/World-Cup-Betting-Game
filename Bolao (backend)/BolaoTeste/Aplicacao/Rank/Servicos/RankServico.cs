@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BolaoTeste.Aplicacao.Rank.Servicos.Interfaces;
+using BolaoTeste.Aplicacao.Rank.Servicos.Services;
 using BolaoTeste.Data.Interfaces;
 using BolaoTeste.Data.Repositorios.Interfaces;
 using BolaoTeste.Dto.ListarPalpite;
@@ -29,13 +30,12 @@ namespace BolaoTeste.Aplicacao.Rank.Servicos
             try
             {
                 IList<Cadastro> cadastrosDb = cadastroRepositorio.Query().ToList();
-                var retorno = mapper.Map<IList<ListarPalpiteResponse>>(cadastrosDb);
 
-                var campeonatoDb = campeonatoRepositorio.Query().FirstOrDefault();
-
-
-                IList<RankResponse> categorias = mapper.Map<IList<RankResponse>>(cadastrosDb);
-                return categorias;
+                var cadastroLista = mapper.Map<IList<ListarPalpiteResponse>>(cadastrosDb);
+                var campeonato = mapper.Map<ListarPalpiteResponse>(campeonatoRepositorio.Query().FirstOrDefault());
+                var retorno = RankService.ListarRank(cadastroLista, campeonato);
+                
+                return retorno;
             }
             catch
             {

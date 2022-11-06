@@ -34,6 +34,7 @@ namespace BolaoTeste.Data.Repositorios
 
         public IQueryable<Cadastro> Query()
         {
+            session.Clear();
             return session.Query<Cadastro>();
         }
 

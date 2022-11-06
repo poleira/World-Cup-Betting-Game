@@ -6,11 +6,11 @@ insert into ge_1 values (1,1,2,3,4,1,2,3,4);
 insert into gf_1 values (1,1,2,3,4,1,2,3,4);
 insert into gg_1 values (1,1,2,3,4,1,2,3,4);
 insert into gh_1 values (1,1,2,3,4,1,2,3,4);
-insert into oitavas_1 values(1,'sting','sting','sting','sting','sting','sting','sting','sting','sting','sting','sting','sting','sting','sting','sting','sting');
-insert into quartas_1 values(1,'sting','sting','sting','sting','sting','sting','sting','sting');
-insert into semis_1 values(1,'sting','sting','sting','sting');
-insert into finais_1 values(1,'sting','sting');
-insert into campeao_1 values(1, 'string');
+insert into oitavas_1 values(1,'Usa','Holanda','Espanha','Brasil','Franca','Alemanha','Argentina','Inglaterra','Senegal','PaisDeGales','Iram','CoreiaDoSul','Belgica','Croacia','Servia','Uruguai');
+insert into quartas_1 values(1,'Usa','Holanda','Espanha','Brasil','Franca','Alemanha','Argentina','Inglaterra');
+insert into semis_1 values(1,'Usa','Holanda','Espanha','Brasil');
+insert into finais_1 values(1,'Espanha','Brasil');
+insert into campeao_1 values(1, 'Brasil');
 insert into jogosdobr_1 values(1,'12','12','12','12','12','12','12');
 
 INSERT INTO campeonato (
