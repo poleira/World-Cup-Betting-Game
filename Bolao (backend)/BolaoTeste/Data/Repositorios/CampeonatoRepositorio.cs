@@ -1,6 +1,5 @@
 ﻿using BolaoTeste.Data.Repositorios.Interfaces;
 using BolaoTeste.Models;
-using MySqlX.XDevAPI;
 using ISession = NHibernate.ISession;
 
 namespace BolaoTeste.Data.Repositorios

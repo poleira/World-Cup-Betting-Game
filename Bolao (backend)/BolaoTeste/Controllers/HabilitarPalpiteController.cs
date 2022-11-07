@@ -1,5 +1,7 @@
 ﻿using BolaoTeste.Aplicacao.Cadastros.Servicos.Interfaces;
+using BolaoTeste.Aplicacao.HabilitarPalpites.Servicos.Interfaces;
 using BolaoTeste.Aplicacao.Rank.Servicos;
+using BolaoTeste.Dto.HabilitarPalpites;
 using BolaoTeste.Dto.Rank;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;

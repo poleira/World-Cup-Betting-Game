@@ -1,11 +1,12 @@
-﻿namespace BolaoTeste.Aplicacao.Palpites.Profile;
-using AutoMapper;
+﻿using AutoMapper;
 using BolaoTeste.Dto.Cadastros;
 using BolaoTeste.Dto.ListarPalpite;
 using BolaoTeste.Dto.Palpites;
 using BolaoTeste.Models;
 
-public class PalpiteProfile : Profile
+namespace BolaoTeste.Aplicacao.Palpites.Profiles
+{
+    public class PalpiteProfile : Profile
     {
         public PalpiteProfile()
         {
@@ -117,28 +118,29 @@ public class PalpiteProfile : Profile
         .ForMember(dest => dest.FinaisTime1, m => m.MapFrom(src => src.Finais.Time1))
         .ForMember(dest => dest.FinaisTime2, m => m.MapFrom(src => src.Finais.Time2))
         .ForMember(dest => dest.Campeao, m => m.MapFrom(src => src.Campeao.Time));
-        CreateMap<Cadastro, ListarOitavasResponse>()
-        .ForMember(dest => dest.Time1, m => m.MapFrom(src => src.Oitavas.time1))
-        .ForMember(dest => dest.Time2, m => m.MapFrom(src => src.Oitavas.time2))
-        .ForMember(dest => dest.Time3, m => m.MapFrom(src => src.Oitavas.time3))
-        .ForMember(dest => dest.Time4, m => m.MapFrom(src => src.Oitavas.time4))
-        .ForMember(dest => dest.Time5, m => m.MapFrom(src => src.Oitavas.time5))
-        .ForMember(dest => dest.Time6, m => m.MapFrom(src => src.Oitavas.time6))
-        .ForMember(dest => dest.Time7, m => m.MapFrom(src => src.Oitavas.time7))
-        .ForMember(dest => dest.Time8, m => m.MapFrom(src => src.Oitavas.time8))
-        .ForMember(dest => dest.Time9, m => m.MapFrom(src => src.Oitavas.time9))
-        .ForMember(dest => dest.Time10, m => m.MapFrom(src => src.Oitavas.time10))
-        .ForMember(dest => dest.Time11, m => m.MapFrom(src => src.Oitavas.time11))
-        .ForMember(dest => dest.Time12, m => m.MapFrom(src => src.Oitavas.time12))
-        .ForMember(dest => dest.Time13, m => m.MapFrom(src => src.Oitavas.time13))
-        .ForMember(dest => dest.Time14, m => m.MapFrom(src => src.Oitavas.time14))
-        .ForMember(dest => dest.Time15, m => m.MapFrom(src => src.Oitavas.time15))
-        .ForMember(dest => dest.Time16, m => m.MapFrom(src => src.Oitavas.time16));
+            CreateMap<Cadastro, ListarOitavasResponse>()
+            .ForMember(dest => dest.Time1, m => m.MapFrom(src => src.Oitavas.time1))
+            .ForMember(dest => dest.Time2, m => m.MapFrom(src => src.Oitavas.time2))
+            .ForMember(dest => dest.Time3, m => m.MapFrom(src => src.Oitavas.time3))
+            .ForMember(dest => dest.Time4, m => m.MapFrom(src => src.Oitavas.time4))
+            .ForMember(dest => dest.Time5, m => m.MapFrom(src => src.Oitavas.time5))
+            .ForMember(dest => dest.Time6, m => m.MapFrom(src => src.Oitavas.time6))
+            .ForMember(dest => dest.Time7, m => m.MapFrom(src => src.Oitavas.time7))
+            .ForMember(dest => dest.Time8, m => m.MapFrom(src => src.Oitavas.time8))
+            .ForMember(dest => dest.Time9, m => m.MapFrom(src => src.Oitavas.time9))
+            .ForMember(dest => dest.Time10, m => m.MapFrom(src => src.Oitavas.time10))
+            .ForMember(dest => dest.Time11, m => m.MapFrom(src => src.Oitavas.time11))
+            .ForMember(dest => dest.Time12, m => m.MapFrom(src => src.Oitavas.time12))
+            .ForMember(dest => dest.Time13, m => m.MapFrom(src => src.Oitavas.time13))
+            .ForMember(dest => dest.Time14, m => m.MapFrom(src => src.Oitavas.time14))
+            .ForMember(dest => dest.Time15, m => m.MapFrom(src => src.Oitavas.time15))
+            .ForMember(dest => dest.Time16, m => m.MapFrom(src => src.Oitavas.time16));
 
 
 
 
 
+        }
     }
-    }
 
+}

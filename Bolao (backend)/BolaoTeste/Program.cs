@@ -1,6 +1,8 @@
 using BolaoTeste;
 using BolaoTeste.Aplicacao.Cadastros.Servicos;
 using BolaoTeste.Aplicacao.Cadastros.Servicos.Interfaces;
+using BolaoTeste.Aplicacao.HabilitarPalpites.Servicos;
+using BolaoTeste.Aplicacao.HabilitarPalpites.Servicos.Interfaces;
 using BolaoTeste.Aplicacao.Palpites.Servicos;
 using BolaoTeste.Aplicacao.Palpites.Servicos.Interfaces;
 using BolaoTeste.Aplicacao.Rank.Servicos;
@@ -78,7 +80,9 @@ builder.Services.AddSingleton<ISession>(factory => factory.GetService<ISessionFa
 builder.Services.AddSingleton<ICadastroRepositorio, CadastroRepositorio>();
 builder.Services.AddSingleton<IPalpiteRepositorio, PalpiteRepositorio>();
 builder.Services.AddSingleton<ICampeonatoRepositorio, CampeonatoRepositorio>();
+builder.Services.AddSingleton<IHabilitarPalpiteRepositorio, HabilitarPalpiteRepositorio>();
 builder.Services.AddSingleton<ICadastroServico, CadastroServico>();
+builder.Services.AddSingleton<IHabilitarPalpiteServico, HabilitarPalpiteServico>();
 builder.Services.AddSingleton<IRankServico, RankServico>();
 builder.Services.AddSingleton<IPalpiteServico, PalpiteServico>();
 
