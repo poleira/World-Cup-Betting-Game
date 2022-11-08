@@ -22,7 +22,7 @@ namespace BolaoTeste.Aplicacao.Palpites.Profiles
         .ForMember(dest => dest.EquadorPontos, m => m.MapFrom(src => src.Ga.EquadorPontos))
         .ForMember(dest => dest.Senegal, m => m.MapFrom(src => src.Ga.Senegal))
         .ForMember(dest => dest.SenegalPontos, m => m.MapFrom(src => src.Ga.SenegalPontos))
-        .ForMember(dest => dest.Holanda, m => m.MapFrom(src => src.Ga.HolandaPontos))
+        .ForMember(dest => dest.Holanda, m => m.MapFrom(src => src.Ga.Holanda))
         .ForMember(dest => dest.HolandaPontos, m => m.MapFrom(src => src.Ga.HolandaPontos))
         .ForMember(dest => dest.Inglaterra, m => m.MapFrom(src => src.Gb.Inglaterra))
         .ForMember(dest => dest.InglaterraPontos, m => m.MapFrom(src => src.Gb.InglaterraPontos))
