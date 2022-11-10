@@ -1,7 +1,22 @@
-<h1>Customers</h1>
-<ul>
-  <li *ngFor="let cust of customers">
-    <span>{{cust.usuario}}</span>
-    <span>{{cust.pontuacao}}</span>
-  </li>
-</ul>
+<div class="cadastroBackground">
+  <div class="cadastroContainer">
+    <div class="itensContainer">
+      <h2 class="titulo">Rank</h2>
+      <div class="tabelaContainer">
+        <table style="width:90%;">
+          <tr style="margin-left:8% ;">
+            <th>Usuario</th>
+            <th>Pontos</th>            
+          </tr>
+          <tr ng-repeat="x in names">
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+       </div>
+        <div class="submitContainer">
+          <a class="loginButton" routerLink="/painel">Menu</a>
+        </div>
+    </div>
+  </div>
+</div>
