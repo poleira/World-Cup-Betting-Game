@@ -10,11 +10,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./grupo-a.component.css'],
 })
 export class GrupoAComponent implements OnInit {
-  Qatar: number = 0;
-  Ecuador: number = 0;
-  Senegal: number = 0;
-  Holanda: number = 0;
+  Qatar: any = 0;
+  QatarPontos: number = 0;
+  Ecuador: any = 0;
+  EcuadorPontos: number = 0;
+  SenegalPontos: number = 0;
+  Senegal: any = 0;
+  Holanda: any = 0;
+  HolandaPontos: number = 0;
   Usuario: String = '';
+  data:any;
+  HabilitaPalpite:any;
 
   constructor(
     private httpClient: HttpClient,
@@ -22,28 +28,43 @@ export class GrupoAComponent implements OnInit {
     private jwtHelper: JwtHelperService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.httpClient.get<any>('https://localhost:7288/api/HabilitarPalpite',{}).subscribe((data)=> {this.HabilitaPalpite = data.geral})
+  }
 
   goPainel() {
     this.router.navigate(['painel']);
   }
 
   enviar() {
-    const token = localStorage.getItem('jwt');
 
+    const token = localStorage.getItem('jwt');
     if (token) {
       const decoded = this.jwtHelper.decodeToken(token);
       this.Usuario =
         decoded['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'];
-      console.log(this.Usuario);
     }
 
-    this.httpClient.put('https://localhost:7288/api/BolaoA', {
-      Qatar: this.Qatar,
-      Ecuador: this.Ecuador,
-      Senegal: this.Senegal,
-      Holanda: this.Holanda,
-      Usuario: this.Usuario,
+    const equador = parseInt(this.Ecuador, 10);
+    const qatar = parseInt(this.Qatar, 10);
+    const holanda = parseInt(this.Holanda, 10);
+    const senegal = parseInt(this.Senegal, 10);
+
+    console.log(this.HabilitaPalpite);
+    this.httpClient.put<any>('https://localhost:7288/api/Ga', {
+      usuario: this.Usuario,
+      qatar: qatar,
+      equador: equador,
+      senegal: senegal,
+      holanda: holanda,
+      qatarPontos: this.QatarPontos,
+      equadorPontos: this.EcuadorPontos,
+      senegalPontos: this.SenegalPontos,
+      holandaPontos: this.HolandaPontos,
+    }).subscribe((data) => {
+      this.data = data;
     });
   }
-}
+  
+  }
+

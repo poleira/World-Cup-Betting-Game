@@ -46,7 +46,7 @@
   font-size: medium;
 }
 .grupo_container_oitavas {
-  height: 628px;
+  height: 632px;
   width: 300px;
   border-radius: 20px;
   background-color: #1b1b1b;
@@ -55,7 +55,7 @@
   align-items: center;
 }
 .grupo_container_quartas {
-  height: 340px;
+  height: 344px;
   width: 300px;
   border-radius: 20px;
   background-color: #1b1b1b;
@@ -65,7 +65,7 @@
   margin-bottom: 15px;
 }
 .grupo_container_semis {
-  height: 195px;
+  height: 199px;
   width: 300px;
   border-radius: 20px;
   background-color: #1b1b1b;
@@ -74,7 +74,7 @@
   align-items: center;
 }
 .grupo_container_finais {
-  height: 125px;
+  height: 129px;
   width: 300px;
   border-radius: 20px;
   background-color: #1b1b1b;
@@ -84,7 +84,7 @@
   margin-bottom: 15px;
 }
 .grupo_container_brasil {
-  height: 303px;
+  height: 308px;
   width: 300px;
   border-radius: 20px;
   background-color: #1b1b1b;

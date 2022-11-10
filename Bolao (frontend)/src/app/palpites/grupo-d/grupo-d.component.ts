@@ -9,11 +9,17 @@ import { JwtHelperService } from '@auth0/angular-jwt';
   styleUrls: ['./grupo-d.component.css'],
 })
 export class GrupoDComponent implements OnInit {
-  Franca: number = 0;
-  Australia: number = 0;
-  Dinamarca: number = 0;
-  Tunisia: number = 0;
+  Franca: any = 0;
+  FrancaPontos: number = 0;
+  Australia: any = 0;
+  AustraliaPontos: number = 0;
+  Dinamarca: any = 0;
+  DinamarcaPontos: number = 0;
+  Tunisia: any = 0;
+  TunisiaPontos: number = 0;
   Usuario: String = '';
+  data:any;
+  HabilitaPalpite:any;
 
   constructor(
     private httpClient: HttpClient,
@@ -21,7 +27,9 @@ export class GrupoDComponent implements OnInit {
     private jwtHelper: JwtHelperService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.httpClient.get<any>('https://localhost:7288/api/HabilitarPalpite',{}).subscribe((data)=> {this.HabilitaPalpite = data.geral})
+  }
 
   goPainel() {
     this.router.navigate(['painel']);
@@ -37,12 +45,24 @@ export class GrupoDComponent implements OnInit {
       console.log(this.Usuario);
     }
 
-    this.httpClient.put('https://localhost:7288/api/BolaoB', {
-      Franca: this.Franca,
-      Australia: this.Australia,
-      Dinamarca: this.Dinamarca,
-      Tunisia: this.Tunisia,
-      Usuario: this.Usuario,
+    const franca = parseInt(this.Franca, 10);
+    const australia = parseInt(this.Australia, 10);
+    const dinamarca = parseInt(this.Dinamarca, 10);
+    const tunisia = parseInt(this.Tunisia, 10);
+
+
+    this.httpClient.put('https://localhost:7288/api/Gd', {
+      usuario: this.Usuario,
+      franca: franca,
+      australia: australia,
+      dinamarca: dinamarca,
+      tunisia: tunisia,
+      francaPontos: this.FrancaPontos,
+      australiaPontos: this.AustraliaPontos,
+      dinamarcaPontos: this.DinamarcaPontos,
+      tunisiaPontos: this.TunisiaPontos,
+    }).subscribe((data) => {
+      this.data = data;
     });
   }
 }

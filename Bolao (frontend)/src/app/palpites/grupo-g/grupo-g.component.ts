@@ -9,11 +9,17 @@ import { JwtHelperService } from '@auth0/angular-jwt';
   styleUrls: ['./grupo-g.component.css'],
 })
 export class GrupoGComponent implements OnInit {
-  Brasil: number = 0;
-  Servia: number = 0;
-  Suica: number = 0;
-  Camaroes: number = 0;
+  Brasil: any;
+  BrasilPontos: number = 0;
+  Servia: any;
+  ServiaPontos: number = 0;
+  Suica: any;
+  SuicaPontos: number = 0;
+  Camaroes: any;
+  CamaroesPontos: number = 0;
   Usuario: String = '';
+  data:any;
+  HabilitaPalpite:any;
 
   constructor(
     private httpClient: HttpClient,
@@ -21,7 +27,9 @@ export class GrupoGComponent implements OnInit {
     private jwtHelper: JwtHelperService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.httpClient.get<any>('https://localhost:7288/api/HabilitarPalpite',{}).subscribe((data)=> {this.HabilitaPalpite = data.geral})
+  }
 
   goPainel() {
     this.router.navigate(['painel']);
@@ -37,12 +45,24 @@ export class GrupoGComponent implements OnInit {
       console.log(this.Usuario);
     }
 
-    this.httpClient.put('https://localhost:7288/api/BolaoB', {
-      Brasil: this.Brasil,
-      Servia: this.Servia,
-      Suica: this.Suica,
-      Camaroes: this.Camaroes,
-      Usuario: this.Usuario,
+    const brasil = parseInt(this.Brasil, 10);
+    const servia = parseInt(this.Servia, 10);
+    const suica = parseInt(this.Suica, 10);
+    const camaroes = parseInt(this.Camaroes, 10);
+
+
+    this.httpClient.put('https://localhost:7288/api/Gg', {
+      brasil: brasil,
+      servia: servia,
+      suica: suica,
+      camaroes: camaroes,
+      brasilPontos: this.BrasilPontos,
+      serviaPontos: this.ServiaPontos,
+      suicaPontos: this.SuicaPontos,
+      camaroesPontos: this.CamaroesPontos,
+      usuario: this.Usuario,
+    }).subscribe((data) => {
+      this.data = data;
     });
   }
 }

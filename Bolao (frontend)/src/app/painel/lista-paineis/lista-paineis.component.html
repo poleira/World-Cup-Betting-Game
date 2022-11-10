@@ -12,301 +12,231 @@
     </div>
     <div class="grupo_container">
       <a class="escrita" [routerLink]="['grupoB']">Grupo B</a>
-      <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">1°</h2>
-      </div>
-      <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">2°</h2>
-      </div>
-      <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">3°</h2>
-      </div>
-      <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">4°</h2>
+      <div class="pais_container" *ngFor="let pais of ArrayB; let i = index">
+        <h2 class="pais_escrita">{{ pais }}</h2>
+        <h2 class="pais_escrita">
+          {{ data[pais] + "°" }} {{ getPontos(pais) + "Pts" }}
+        </h2>
       </div>
     </div>
     <div class="grupo_container">
       <a class="escrita" [routerLink]="['grupoC']">Grupo C</a>
-      <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">1°</h2>
-      </div>
-      <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">2°</h2>
-      </div>
-      <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">3°</h2>
-      </div>
-      <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">4°</h2>
+      <div class="pais_container" *ngFor="let pais of ArrayC; let i = index">
+        <h2 class="pais_escrita">{{ pais }}</h2>
+        <h2 class="pais_escrita">
+          {{ data[pais] + "°" }} {{ getPontos(pais) + "Pts" }}
+        </h2>
       </div>
     </div>
     <div class="grupo_container">
       <a class="escrita" [routerLink]="['grupoD']">Grupo D</a>
-      <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">1°</h2>
-      </div>
-      <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">2°</h2>
-      </div>
-      <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">3°</h2>
-      </div>
-      <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">4°</h2>
+      <div class="pais_container" *ngFor="let pais of ArrayD; let i = index">
+        <h2 class="pais_escrita">{{ pais }}</h2>
+        <h2 class="pais_escrita">
+          {{ data[pais] + "°" }} {{ getPontos(pais) + "Pts" }}
+        </h2>
       </div>
     </div>
     <div class="grupo_container">
       <a class="escrita" [routerLink]="['grupoE']">Grupo E</a>
-      <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">1°</h2>
-      </div>
-      <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">2°</h2>
-      </div>
-      <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">3°</h2>
-      </div>
-      <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">4°</h2>
+      <div class="pais_container" *ngFor="let pais of ArrayE; let i = index">
+        <h2 class="pais_escrita">{{ pais }}</h2>
+        <h2 class="pais_escrita">
+          {{ data[pais] + "°" }} {{ getPontos(pais) + "Pts" }}
+        </h2>
       </div>
     </div>
     <div class="grupo_container">
       <a class="escrita" [routerLink]="['grupoF']">Grupo F</a>
-      <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">1°</h2>
-      </div>
-      <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">2°</h2>
-      </div>
-      <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">3°</h2>
-      </div>
-      <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">4°</h2>
+      <div class="pais_container" *ngFor="let pais of ArrayF; let i = index">
+        <h2 class="pais_escrita">{{ pais }}</h2>
+        <h2 class="pais_escrita">
+          {{ data[pais] + "°" }} {{ getPontos(pais) + "Pts" }}
+        </h2>
       </div>
     </div>
     <div class="grupo_container">
       <a class="escrita" [routerLink]="['grupoG']">Grupo G</a>
-      <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">1°</h2>
-      </div>
-      <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">2°</h2>
-      </div>
-      <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">3°</h2>
-      </div>
-      <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">4°</h2>
+      <div class="pais_container" *ngFor="let pais of ArrayG; let i = index">
+        <h2 class="pais_escrita">{{ pais }}</h2>
+        <h2 class="pais_escrita">
+          {{ data[pais] + "°" }} {{ getPontos(pais) + "Pts" }}
+        </h2>
       </div>
     </div>
     <div class="grupo_container">
       <a class="escrita" [routerLink]="['grupoH']">Grupo H</a>
-      <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">1°</h2>
-      </div>
-      <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">2°</h2>
-      </div>
-      <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">3°</h2>
-      </div>
-      <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">4°</h2>
+      <div class="pais_container" *ngFor="let pais of ArrayH; let i = index">
+        <h2 class="pais_escrita">{{ pais }}</h2>
+        <h2 class="pais_escrita">
+          {{ data[pais] + "°" }} {{ getPontos(pais) + "Pts" }}
+        </h2>
       </div>
     </div>
     <div class="grupo_container_oitavas">
-      <a class="escrita" href="menu">Oitavas</a>
+      <a class="escrita" [routerLink]="['matamata']">Oitavas</a>
       <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">1</h2>
+        <h2 class="pais_escrita">{{data.oitavasTime1}}</h2>
+        <h2 class="pais_escrita">O1</h2>
       </div>
       <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">2</h2>
+        <h2 class="pais_escrita">{{data.oitavasTime2}}</h2>
+        <h2 class="pais_escrita">O1</h2>
       </div>
       <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">3</h2>
+        <h2 class="pais_escrita">{{data.oitavasTime3}}</h2>
+        <h2 class="pais_escrita">O2</h2>
       </div>
       <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">4</h2>
+        <h2 class="pais_escrita">{{data.oitavasTime4}}</h2>
+        <h2 class="pais_escrita">O2</h2>
       </div>
       <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">5</h2>
+        <h2 class="pais_escrita">{{data.oitavasTime5}}</h2>
+        <h2 class="pais_escrita">O3</h2>
       </div>
       <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">6</h2>
+        <h2 class="pais_escrita">{{data.oitavasTime6}}</h2>
+        <h2 class="pais_escrita">O3</h2>
       </div>
       <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">7</h2>
+        <h2 class="pais_escrita">{{data.oitavasTime7}}</h2>
+        <h2 class="pais_escrita">O4</h2>
       </div>
       <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">8</h2>
+        <h2 class="pais_escrita">{{data.oitavasTime8}}</h2>
+        <h2 class="pais_escrita">O4</h2>
       </div>
       <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">9</h2>
+        <h2 class="pais_escrita">{{data.oitavasTime9}}</h2>
+        <h2 class="pais_escrita">O5</h2>
       </div>
       <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">10</h2>
+        <h2 class="pais_escrita">{{data.oitavasTime10}}</h2>
+        <h2 class="pais_escrita">O5</h2>
       </div>
       <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">11</h2>
+        <h2 class="pais_escrita">{{data.oitavasTime11}}</h2>
+        <h2 class="pais_escrita">O6</h2>
       </div>
       <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">12</h2>
+        <h2 class="pais_escrita">{{data.oitavasTime12}}</h2>
+        <h2 class="pais_escrita">O6</h2>
       </div>
       <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">13</h2>
+        <h2 class="pais_escrita">{{data.oitavasTime13}}</h2>
+        <h2 class="pais_escrita">O7</h2>
       </div>
       <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">14</h2>
+        <h2 class="pais_escrita">{{data.oitavasTime14}}</h2>
+        <h2 class="pais_escrita">O7</h2>
       </div>
       <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">15</h2>
+        <h2 class="pais_escrita">{{data.oitavasTime15}}</h2>
+        <h2 class="pais_escrita">O8</h2>
       </div>
       <div class="pais_container">
-        <h2 class="pais_escrita">pais</h2>
-        <h2 class="pais_escrita">16</h2>
+        <h2 class="pais_escrita">{{data.oitavasTime16}}</h2>
+        <h2 class="pais_escrita">O8</h2>
       </div>
     </div>
     <div class="espaco2">
       <div class="grupo_container_quartas">
-        <a class="escrita" href="menu">Quartas</a>
+        <a class="escrita" [routerLink]="['matamata']">Quartas</a>
         <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">1</h2>
+          <h2 class="pais_escrita">{{data.quartasTime1}}</h2>
+          <h2 class="pais_escrita">Q1</h2>
         </div>
         <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">2</h2>
+          <h2 class="pais_escrita">{{data.quartasTime2}}</h2>
+          <h2 class="pais_escrita">Q1</h2>
         </div>
         <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">3</h2>
+          <h2 class="pais_escrita">{{data.quartasTime3}}</h2>
+          <h2 class="pais_escrita">Q2</h2>
         </div>
         <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">4</h2>
+          <h2 class="pais_escrita">{{data.quartasTime4}}</h2>
+          <h2 class="pais_escrita">Q2</h2>
         </div>
         <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">5</h2>
+          <h2 class="pais_escrita">{{data.quartasTime5}}</h2>
+          <h2 class="pais_escrita">Q3</h2>
         </div>
         <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">6</h2>
+          <h2 class="pais_escrita">{{data.quartasTime6}}</h2>
+          <h2 class="pais_escrita">Q3</h2>
         </div>
         <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">7</h2>
+          <h2 class="pais_escrita">{{data.quartasTime7}}</h2>
+          <h2 class="pais_escrita">Q4</h2>
         </div>
         <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">8</h2>
+          <h2 class="pais_escrita">{{data.quartasTime8}}</h2>
+          <h2 class="pais_escrita">Q4</h2>
         </div>
       </div>
       <div class="grupo_container_semis">
-        <a class="escrita" href="menu">Semis</a>
+        <a class="escrita" [routerLink]="['matamata']">Semis</a>
         <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">1</h2>
+          <h2 class="pais_escrita">{{data.semisTime1}}</h2>
+          <h2 class="pais_escrita">S1</h2>
         </div>
         <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">2</h2>
+          <h2 class="pais_escrita">{{data.semisTime2}}</h2>
+          <h2 class="pais_escrita">S1</h2>
         </div>
         <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">3</h2>
+          <h2 class="pais_escrita">{{data.semisTime3}}</h2>
+          <h2 class="pais_escrita">S2</h2>
         </div>
         <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">4</h2>
+          <h2 class="pais_escrita">{{data.semisTime4}}</h2>
+          <h2 class="pais_escrita">S2</h2>
         </div>
       </div>
     </div>
     <div class="espaco2">
       <div class="grupo_container_finais">
-        <a class="escrita" href="menu">Finais</a>
+        <a class="escrita" [routerLink]="['matamata']">Finais</a>
         <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">1</h2>
+          <h2 class="pais_escrita">{{data.finaisTime1}}</h2>
+          <h2 class="pais_escrita">F1</h2>
         </div>
         <div class="pais_container">
-          <h2 class="pais_escrita">pais</h2>
-          <h2 class="pais_escrita">2</h2>
+          <h2 class="pais_escrita">{{data.finaisTime2}}</h2>
+          <h2 class="pais_escrita">F1</h2>
         </div>
       </div>
       <div class="grupo_container_brasil">
         <a class="escrita" href="menu">Jogos Brasil</a>
         <div class="pais_container">
-          <h2 class="pais_escrita">Jogo</h2>
-          <h2 class="pais_escrita">1</h2>
+          <h2 class="pais_escrita">Brasil x Servia</h2>
+          <h2 class="pais_escrita">{{data.jogo1}}</h2>
         </div>
         <div class="pais_container">
-          <h2 class="pais_escrita">Jogo</h2>
-          <h2 class="pais_escrita">2</h2>
+          <h2 class="pais_escrita">Brasil x Suica</h2>
+          <h2 class="pais_escrita">{{data.jogo2}}</h2>
         </div>
         <div class="pais_container">
-          <h2 class="pais_escrita">Jogo</h2>
-          <h2 class="pais_escrita">3</h2>
+          <h2 class="pais_escrita">Brasil x Camaroes</h2>
+          <h2 class="pais_escrita">{{data.jogo3}}</h2>
         </div>
         <div class="pais_container">
-          <h2 class="pais_escrita">Jogo</h2>
-          <h2 class="pais_escrita">4</h2>
+          <h2 class="pais_escrita">Brasil x Oitavas</h2>
+          <h2 class="pais_escrita">{{data.oitavas}}</h2>
         </div>
         <div class="pais_container">
-          <h2 class="pais_escrita">Jogo</h2>
-          <h2 class="pais_escrita">5</h2>
+          <h2 class="pais_escrita">Brasil x Quartas</h2>
+          <h2 class="pais_escrita">{{data.quartas}}</h2>
         </div>
         <div class="pais_container">
-          <h2 class="pais_escrita">Jogo</h2>
-          <h2 class="pais_escrita">6</h2>
+          <h2 class="pais_escrita">Brasil x Semis</h2>
+          <h2 class="pais_escrita">{{data.semis}}</h2>
         </div>
         <div class="pais_container">
-          <h2 class="pais_escrita">Jogo</h2>
-          <h2 class="pais_escrita">7</h2>
+          <h2 class="pais_escrita">Brasil x Finais</h2>
+          <h2 class="pais_escrita">{{data.final}}</h2>
         </div>
       </div>
     </div>

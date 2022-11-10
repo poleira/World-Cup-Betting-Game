@@ -55,6 +55,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('../palpites/grupo-h/grupo-h.module').then((m) => m.GrupoHModule),
   },
+  {
+    path: 'matamata',
+    loadChildren: () =>
+      import('../palpites/mata-mata/mata-mata/mata-mata.module').then((m) => m.MataMataModule),
+  },
 ];
 
 @NgModule({

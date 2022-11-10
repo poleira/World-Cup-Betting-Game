@@ -9,11 +9,17 @@ import { JwtHelperService } from '@auth0/angular-jwt';
   styleUrls: ['./grupo-b.component.css'],
 })
 export class GrupoBComponent implements OnInit {
-  Inglaterra: number = 0;
-  Iran: number = 0;
-  USA: number = 0;
-  PaisDeGales: number = 0;
+  Inglaterra: any;
+  InglaterraPontos: number = 0;
+  Iram: any;
+  IramPontos: number = 0;
+  USA: any;
+  USAPontos: number = 0;
+  PaisDeGales: any;
+  PaisDeGalesPontos: number = 0;
   Usuario: String = '';
+  data:any;
+  HabilitaPalpite:any;
 
   constructor(
     private httpClient: HttpClient,
@@ -21,7 +27,9 @@ export class GrupoBComponent implements OnInit {
     private jwtHelper: JwtHelperService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.httpClient.get<any>('https://localhost:7288/api/HabilitarPalpite',{}).subscribe((data)=> {this.HabilitaPalpite = data.geral})
+  }
 
   goPainel() {
     this.router.navigate(['painel']);
@@ -37,12 +45,23 @@ export class GrupoBComponent implements OnInit {
       console.log(this.Usuario);
     }
 
-    this.httpClient.put('https://localhost:7288/api/BolaoB', {
-      Inglaterra: this.Inglaterra,
-      Iran: this.Iran,
-      USA: this.USA,
-      PaisDeGales: this.PaisDeGales,
-      Usuario: this.Usuario,
+    const inglaterra = parseInt(this.Inglaterra, 10);
+    const iram = parseInt(this.Iram, 10);
+    const usa = parseInt(this.USA, 10);
+    const paisDeGales = parseInt(this.PaisDeGales, 10);
+
+    this.httpClient.put<any>('https://localhost:7288/api/Gb', {
+      usuario: this.Usuario,
+      inglaterra: inglaterra,
+      iram: iram,
+      usa: usa,
+      paisDeGales: paisDeGales,
+      inglaterraPontos: this.InglaterraPontos,
+      iramPontos: this.IramPontos,
+      usaPontos: this.USAPontos,
+      paisDeGalesPontos: this.PaisDeGalesPontos,
+    }).subscribe((data) => {
+      this.data = data;
     });
   }
 }

@@ -9,11 +9,17 @@ import { JwtHelperService } from '@auth0/angular-jwt';
   styleUrls: ['./grupo-f.component.css'],
 })
 export class GrupoFComponent implements OnInit {
-  Belgica: number = 0;
-  Canada: number = 0;
-  Marrocos: number = 0;
-  Croacia: number = 0;
+  Belgica: any = 0;
+  BelgicaPontos: number = 0;
+  Canada: any = 0;
+  CanadaPontos: number = 0;
+  Marrocos: any = 0;
+  MarrocosPontos: number = 0;
+  Croacia: any = 0;
+  CroaciaPontos: number = 0;
   Usuario: String = '';
+  data:any;
+  HabilitaPalpite:any;
 
   constructor(
     private httpClient: HttpClient,
@@ -21,7 +27,9 @@ export class GrupoFComponent implements OnInit {
     private jwtHelper: JwtHelperService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.httpClient.get<any>('https://localhost:7288/api/HabilitarPalpite',{}).subscribe((data)=> {this.HabilitaPalpite = data.geral})
+  }
 
   goPainel() {
     this.router.navigate(['painel']);
@@ -37,12 +45,26 @@ export class GrupoFComponent implements OnInit {
       console.log(this.Usuario);
     }
 
-    this.httpClient.put('https://localhost:7288/api/BolaoB', {
-      Belgica: this.Belgica,
-      Canada: this.Canada,
-      Marrocos: this.Marrocos,
-      Croacia: this.Croacia,
-      Usuario: this.Usuario,
+    const belgica = parseInt(this.Belgica, 10);
+    const canada = parseInt(this.Canada, 10);
+    const marrocos = parseInt(this.Marrocos, 10);
+    const croacia = parseInt(this.Croacia, 10);
+
+
+    this.httpClient.put<any>('https://localhost:7288/api/Gf', {
+      usuario: this.Usuario,
+      belgica: belgica,
+      canada: canada,
+      marrocos: marrocos,
+      croacia: croacia,
+      belgicaPontos: this.BelgicaPontos,
+      canadaPontos: this.CanadaPontos,
+      marrocosPontos: this.MarrocosPontos,
+      croaciaPontos: this.CroaciaPontos,
+      
+    })
+    .subscribe((data) => {
+      this.data = data;
     });
   }
 }

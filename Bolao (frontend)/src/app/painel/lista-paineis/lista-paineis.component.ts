@@ -16,7 +16,22 @@ export class ListaPaineisComponent implements OnInit {
   Usuario: string = '';
 
   GrupoA: any;
+  GrupoB: any;
+  GrupoC: any;
+  GrupoD: any;
+  GrupoE: any;
+  GrupoF: any;
+  GrupoG: any;
+  GrupoH: any;
+
   ArrayA: any[] = [];
+  ArrayB: any[] = [];
+  ArrayC: any[] = [];
+  ArrayD: any[] = [];
+  ArrayE: any[] = [];
+  ArrayF: any[] = [];
+  ArrayG: any[] = [];
+  ArrayH: any[] = [];
   data: any;
 
   constructor(
@@ -37,6 +52,49 @@ export class ListaPaineisComponent implements OnInit {
           holanda: data.holanda,
           senegal: data.senegal,
         };
+        this.GrupoB = {
+          inglaterra: data.inglaterra,
+          iram: data.iram,
+          usa: data.usa,
+          paisDeGales: data.paisDeGales,
+        };
+        this.GrupoC = {
+          argentina: data.argentina,
+          arabiaSaudita: data.arabiaSaudita,
+          mexico: data.mexico,
+          polonia: data.polonia,
+        };
+        this.GrupoD = {
+          franca: data.franca,
+          australia: data.australia,
+          dinamarca: data.dinamarca,
+          tunisia: data.tunisia,
+        };
+        this.GrupoE = {
+          espanha: data.espanha,
+          costaRica: data.costaRica,
+          alemanha: data.alemanha,
+          japao: data.japao,
+        };
+        this.GrupoF = {
+          belgica: data.belgica,
+          canada: data.canada,
+          marrocos: data.marrocos,
+          croacia: data.croacia,
+        };
+        this.GrupoG = {
+          brasil: data.brasil,
+          servia: data.servia,
+          suica: data.suica,
+          camaroes: data.camaroes,
+        };
+        this.GrupoH = {
+          portugal: data.portugal,
+          gana: data.gana,
+          uruguai: data.uruguai,
+          coreiaDoSul: data.coreiaDoSul,
+        };
+        ;
         this.Organize();
       });
   }
@@ -46,12 +104,32 @@ export class ListaPaineisComponent implements OnInit {
   }
 
   Organize() {
-    console.log(this.GrupoA);
+    console.log(this.GrupoD);
     this.ArrayA = Object.keys(this.GrupoA).sort(
       (a, b) => this.GrupoA[a] - this.GrupoA[b]
     );
-
-    console.log(this.ArrayA);
+    this.ArrayB = Object.keys(this.GrupoB).sort(
+      (a, b) => this.GrupoB[a] - this.GrupoB[b]
+    );
+    this.ArrayC = Object.keys(this.GrupoC).sort(
+      (a, b) => this.GrupoC[a] - this.GrupoC[b]
+    );
+    this.ArrayD = Object.keys(this.GrupoD).sort(
+      (a, b) => this.GrupoD[a] - this.GrupoD[b]
+    );
+    this.ArrayE = Object.keys(this.GrupoE).sort(
+      (a, b) => this.GrupoE[a] - this.GrupoE[b]
+    );
+    this.ArrayF = Object.keys(this.GrupoF).sort(
+      (a, b) => this.GrupoF[a] - this.GrupoF[b]
+    );
+    this.ArrayG = Object.keys(this.GrupoG).sort(
+      (a, b) => this.GrupoG[a] - this.GrupoG[b]
+    );
+    this.ArrayH = Object.keys(this.GrupoH).sort(
+      (a, b) => this.GrupoH[a] - this.GrupoH[b]
+    );
+    console.log(this.ArrayD);
   }
 
   navegarGrupoA = () => {
