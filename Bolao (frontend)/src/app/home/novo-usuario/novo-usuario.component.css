@@ -24,8 +24,8 @@
     width: 500px;
     height: 100px;
   }
-  /* .logo {
-    background: url("/img/Bolão_do_hexa-removebg-preview.png");
+  .logo {
+    background: url("https://raw.githubusercontent.com/poleira/World-Cup-Betting-Game/master/Bolao%20(frontend)/img/Bol%C3%A3o_do_hexa-removebg-preview.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -34,7 +34,7 @@
     height: 80%;
   
     margin-left: 45px;
-  } */
+  }
   .titulo {
     
     display: flex;
