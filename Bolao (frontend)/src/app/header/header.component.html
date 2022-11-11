@@ -4,7 +4,7 @@
     <div class="header-right">
       <a class="active" routerLink="/painel">Home</a>
       <a routerLink="/painel/rank">Rank</a>
-      <a href="">Regras</a>
+      <a [routerLink]="['/painel/regras']">Regras</a>
       <a (click)="logout()" routerLink="">Logout</a>
     </div>
   </div>

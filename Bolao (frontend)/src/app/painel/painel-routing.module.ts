@@ -58,7 +58,19 @@ const routes: Routes = [
   {
     path: 'matamata',
     loadChildren: () =>
-      import('../palpites/mata-mata/mata-mata/mata-mata.module').then((m) => m.MataMataModule),
+      import('../palpites/mata-mata/mata-mata/mata-mata.module').then(
+        (m) => m.MataMataModule
+      ),
+  },
+  {
+    path: 'jogosbr',
+    loadChildren: () =>
+      import('../palpites/jogo-br/jogo-br.module').then((m) => m.JogoBRModule),
+  },
+  {
+    path: 'regras',
+    loadChildren: () =>
+      import('../regras/regras.module').then((m) => m.RegrasModule),
   },
 ];
 
