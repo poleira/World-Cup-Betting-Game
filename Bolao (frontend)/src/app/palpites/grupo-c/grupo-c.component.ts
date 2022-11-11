@@ -62,6 +62,8 @@ export class GrupoCComponent implements OnInit {
       poloniaPontos: this.PoloniaPontos,
     }).subscribe((data) => {
       this.data = data;
+      alert('Registrado, boa sorte!')
+      this.goPainel()
     });
   }
 }

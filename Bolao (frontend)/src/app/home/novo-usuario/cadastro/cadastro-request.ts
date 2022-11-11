@@ -2,6 +2,6 @@ export interface CadastroRequest {
     Usuario: string;
     Nome: string;
     Senha: string;
-    Email: string;
+    Token: string;
     SenhaRepet: string;
 }

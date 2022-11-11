@@ -63,6 +63,8 @@ export class GrupoEComponent implements OnInit {
       japaoPontos: this.JapaoPontos,
     }).subscribe((data) => {
       this.data = data;
+      alert('Registrado, boa sorte!')
+      this.goPainel()
     });
   }
 }

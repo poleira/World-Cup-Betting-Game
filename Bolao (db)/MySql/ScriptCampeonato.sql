@@ -13,6 +13,10 @@ insert into finais_1 values(1,'Espanha','Brasil');
 insert into campeao_1 values(1, 'Brasil');
 insert into jogosdobr_1 values(1,'12','12','12','12','12','12','12');
 
+Update habilitarpalpite
+set geral = false, oitavas = false, quartas=true, semis = false, finais = false
+where id = 1;
+
 INSERT INTO campeonato (
     `NOME_CAMPEONATO`,
     `USUARIO`,

@@ -83,6 +83,10 @@ export class MataMataGridComponent implements OnInit {
     this.organizar(result);
   }
 
+  goPainel() {
+    this.router.navigate(['painel']);
+  }
+
   onPaisClick(index: Array<number>, i: number = 0) {
     if (index[0] == 4) return;
     let pais = this.paises[index[0]][index[1]];
@@ -167,5 +171,8 @@ export class MataMataGridComponent implements OnInit {
       .toPromise();
 
     console.log(quartasPayload, semisPayload, finaisPayload, campeaoPayload);
+
+    alert('Registrado, boa sorte!')
+    this.goPainel()
   }
 }

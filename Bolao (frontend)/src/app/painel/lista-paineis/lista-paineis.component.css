@@ -83,6 +83,16 @@
   align-items: center;
   margin-bottom: 15px;
 }
+.grupo_container_campeao {
+  height: 92px;
+  width: 300px;
+  border-radius: 20px;
+  background-color: #1b1b1b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
 .grupo_container_brasil {
   height: 308px;
   width: 300px;

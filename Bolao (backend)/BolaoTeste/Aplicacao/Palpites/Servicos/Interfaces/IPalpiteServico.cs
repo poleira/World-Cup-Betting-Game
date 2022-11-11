@@ -1,4 +1,5 @@
 ﻿using BolaoTeste.Dto;
+using BolaoTeste.Dto.JogosBr;
 using BolaoTeste.Dto.ListarPalpite;
 using BolaoTeste.Dto.Palpites;
 using BolaoTeste.Models;
@@ -22,6 +23,12 @@ namespace BolaoTeste.Aplicacao.Palpites.Servicos.Interfaces
         OkResponse EditaJogosDoBr(JogosDoBrEditarRequest request);
         ListarPalpiteResponse ListarPalpites(ListarPalpiteRequest request);
         ListarOitavasResponse ListarOitavas(ListarOitavasRequest request);
+        public OkResponse EditaJogosBrGrupos(FaseDeGruposJogosBrRequest request);
+        public OkResponse EditaJogosBrOitavas(MataMataJogosBrRequest request);
+        public OkResponse EditaJogosBrQuartas(MataMataJogosBrRequest request);
+        public OkResponse EditaJogosBrSemis(MataMataJogosBrRequest request);
+        public OkResponse EditaJogosBrFinais(MataMataJogosBrRequest request);
+
 
 
     }

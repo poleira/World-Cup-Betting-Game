@@ -8114,19 +8114,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ASUS\\.nuget\\packages\\": {}
+    "C:\\Users\\MARCO\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ASUS\\OneDrive\\Área de Trabalho\\World-Cup-Betting-Game\\Bolao (backend)\\BolaoTeste\\BolaoTeste.csproj",
+      "projectUniqueName": "C:\\Users\\MARCO\\Desktop\\World-Cup-Betting-Game\\Bolao (backend)\\BolaoTeste\\BolaoTeste.csproj",
       "projectName": "BolaoTeste",
-      "projectPath": "C:\\Users\\ASUS\\OneDrive\\Área de Trabalho\\World-Cup-Betting-Game\\Bolao (backend)\\BolaoTeste\\BolaoTeste.csproj",
-      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ASUS\\OneDrive\\Área de Trabalho\\World-Cup-Betting-Game\\Bolao (backend)\\BolaoTeste\\obj\\",
+      "projectPath": "C:\\Users\\MARCO\\Desktop\\World-Cup-Betting-Game\\Bolao (backend)\\BolaoTeste\\BolaoTeste.csproj",
+      "packagesPath": "C:\\Users\\MARCO\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\MARCO\\Desktop\\World-Cup-Betting-Game\\Bolao (backend)\\BolaoTeste\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\MARCO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8134,6 +8139,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

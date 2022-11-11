@@ -1,4 +1,5 @@
-﻿using BolaoTeste.Dto.Palpites;
+﻿using BolaoTeste.Dto.JogosBr;
+using BolaoTeste.Dto.Palpites;
 
 namespace BolaoTeste.Data.Repositorios.Interfaces
 {
@@ -12,5 +13,11 @@ namespace BolaoTeste.Data.Repositorios.Interfaces
         public void EditarGf(GfEditarRequest request, string Idg, string g, string primeiro, string segundo);
         public void EditarGg(GgEditarRequest request, string Idg, string g, string primeiro, string segundo);
         public void EditarGh(GhEditarRequest request, string Idg, string g, string primeiro, string segundo);
+        void EditarJogosBrGrupos(FaseDeGruposJogosBrRequest request);
+        public void EditarJogosBrOitavas(MataMataJogosBrRequest request, string oitavas);
+        public void EditarJogosBrQuartas(MataMataJogosBrRequest request, string quartas);
+        public void EditarJogosBrSemis(MataMataJogosBrRequest request, string semis);
+        public void EditarJogosBrFinais(MataMataJogosBrRequest request, string finais);
+
     }
 }

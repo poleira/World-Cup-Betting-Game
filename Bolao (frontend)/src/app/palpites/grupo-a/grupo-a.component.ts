@@ -63,6 +63,8 @@ export class GrupoAComponent implements OnInit {
       holandaPontos: this.HolandaPontos,
     }).subscribe((data) => {
       this.data = data;
+      alert('Registrado, boa sorte!')
+      this.goPainel()
     });
   }
   

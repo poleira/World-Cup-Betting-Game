@@ -63,6 +63,8 @@ export class GrupoDComponent implements OnInit {
       tunisiaPontos: this.TunisiaPontos,
     }).subscribe((data) => {
       this.data = data;
+      alert('Registrado, boa sorte!')
+      this.goPainel()
     });
   }
 }

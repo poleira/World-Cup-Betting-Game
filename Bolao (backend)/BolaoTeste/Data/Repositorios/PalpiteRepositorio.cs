@@ -4,6 +4,7 @@ using ISession = NHibernate.ISession;
 using Dapper;
 using NHibernate;
 using BolaoTeste.Data.Repositorios.Interfaces;
+using BolaoTeste.Dto.JogosBr;
 
 namespace BolaoTeste.Data.Repositorios
 {
@@ -18,10 +19,69 @@ namespace BolaoTeste.Data.Repositorios
                                         -TIMEX1- = @selecao1, -TIMEX2- = @selecao2
                                         WHERE
                                         usuario = @usuario";
+        private readonly string sqlJogosBrGrupos = @"Update cadastro    
+                                                   inner join jogosdobr on IDJOGOSDOBR = jogosdobr.id
+                                                   set jogo1 = @jogo1, jogo2 = @jogo2, jogo3 = @jogo3
+                                                   where usuario = @usuario";
+        private readonly string sqlJogosBrMataMata = @"Update cadastro    
+                                                   inner join jogosdobr on IDJOGOSDOBR = jogosdobr.id
+                                                   set -matamata- = @jogo
+                                                   where usuario = @usuario";
 
         public PalpiteRepositorio(ISession session)
         {
             this.session = session;
+        }
+        public void EditarJogosBrGrupos(FaseDeGruposJogosBrRequest request)
+        {
+
+            DynamicParameters parameters = new();
+            parameters.Add("@jogo1", request.JogoBr1);
+            parameters.Add("@jogo2", request.JogoBr2);
+            parameters.Add("@jogo3", request.JogoBr3);
+            parameters.Add("@usuario", request.Usuario);
+
+            session.Connection.Execute(sqlJogosBrGrupos, parameters);
+        }
+        public void EditarJogosBrOitavas(MataMataJogosBrRequest request, string oitavas)
+        {
+
+            DynamicParameters parameters = new();
+            var sqlReplacement = sqlJogosBrMataMata.Replace("-matamata-", oitavas);
+            parameters.Add("@jogo", request.JogoBr);
+            parameters.Add("@usuario", request.Usuario);
+
+            session.Connection.Execute(sqlReplacement, parameters);
+        }
+        public void EditarJogosBrQuartas(MataMataJogosBrRequest request, string quartas)
+        {
+
+            DynamicParameters parameters = new();
+            var sqlReplacement = sqlJogosBrMataMata.Replace("-matamata-", quartas);
+            parameters.Add("@jogo", request.JogoBr);
+            parameters.Add("@usuario", request.Usuario);
+
+            session.Connection.Execute(sqlReplacement, parameters);
+        }
+        public void EditarJogosBrSemis(MataMataJogosBrRequest request, string semis)
+        {
+
+            DynamicParameters parameters = new();
+            var sqlReplacement = sqlJogosBrMataMata.Replace("-matamata-", semis);
+            parameters.Add("@jogo", request.JogoBr);
+            parameters.Add("@usuario", request.Usuario);
+
+            session.Connection.Execute(sqlReplacement, parameters);
+        }
+        public void EditarJogosBrFinais(MataMataJogosBrRequest request, string finais)
+        {
+
+            DynamicParameters parameters = new();
+            var sqlReplacement = sqlJogosBrMataMata.Replace("-matamata-", finais);
+            parameters.Add("@jogo", request.JogoBr);
+            parameters.Add("@usuario", request.Usuario);
+
+            session.Connection.Execute(sqlReplacement, parameters);
         }
 
         public void EditarGa(GaEditarRequest request, string Idg, string g, string primeiro, string segundo)

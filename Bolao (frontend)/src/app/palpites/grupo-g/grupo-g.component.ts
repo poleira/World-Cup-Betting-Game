@@ -63,6 +63,8 @@ export class GrupoGComponent implements OnInit {
       usuario: this.Usuario,
     }).subscribe((data) => {
       this.data = data;
+      alert('Registrado, boa sorte!')
+      this.goPainel()
     });
   }
 }

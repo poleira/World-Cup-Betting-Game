@@ -4,6 +4,7 @@ using BolaoTeste.Aplicacao.Palpites.Servicos.Interfaces;
 using BolaoTeste.Data.Interfaces;
 using BolaoTeste.Data.Repositorios.Interfaces;
 using BolaoTeste.Dto;
+using BolaoTeste.Dto.JogosBr;
 using BolaoTeste.Dto.ListarPalpite;
 using BolaoTeste.Dto.Palpites;
 using BolaoTeste.Models;
@@ -534,6 +535,102 @@ namespace BolaoTeste.Aplicacao.Palpites.Servicos
             var usuario = mapper.Map<ListarOitavasResponse>(queryUsuario);
             usuario = TransformarEmSigla.TransformaEmSigla(usuario);
             return usuario;
+        }
+
+        public OkResponse EditaJogosBrGrupos (FaseDeGruposJogosBrRequest request)
+        {
+            var transacao = session.BeginTransaction();
+            try
+            {
+
+                palpiteRepositorio.EditarJogosBrGrupos(request);
+
+                if (transacao.IsActive)
+                    transacao.Commit();
+                return new OkResponse { Ok = "Ok" };
+            }
+            catch
+            {
+                if (transacao.IsActive)
+                    transacao.Rollback();
+                return null;
+            }
+        }
+        public OkResponse EditaJogosBrOitavas(MataMataJogosBrRequest request)
+        {
+            var transacao = session.BeginTransaction();
+                string oitavas = "oitavas";
+            try
+            {
+                palpiteRepositorio.EditarJogosBrOitavas(request, oitavas);
+
+                if (transacao.IsActive)
+                    transacao.Commit();
+                return new OkResponse { Ok = "Ok" };
+            }
+            catch
+            {
+                if (transacao.IsActive)
+                    transacao.Rollback();
+                return null;
+            }
+        }
+        public OkResponse EditaJogosBrQuartas(MataMataJogosBrRequest request)
+        {
+            var transacao = session.BeginTransaction();
+                string quartas = "quartas";
+            try
+            {
+                palpiteRepositorio.EditarJogosBrQuartas(request, quartas);
+
+                if (transacao.IsActive)
+                    transacao.Commit();
+                return new OkResponse { Ok = "Ok" };
+            }
+            catch
+            {
+                if (transacao.IsActive)
+                    transacao.Rollback();
+                return null;
+            }
+        }
+        public OkResponse EditaJogosBrSemis(MataMataJogosBrRequest request)
+        {
+            var transacao = session.BeginTransaction();
+                string semis = "semis";
+            try
+            {
+                palpiteRepositorio.EditarJogosBrSemis(request, semis);
+
+                if (transacao.IsActive)
+                    transacao.Commit();
+                return new OkResponse { Ok = "Ok" };
+            }
+            catch
+            {
+                if (transacao.IsActive)
+                    transacao.Rollback();
+                return null;
+            }
+        }
+        public OkResponse EditaJogosBrFinais(MataMataJogosBrRequest request)
+        {
+            var transacao = session.BeginTransaction();
+                string finais = "final";
+            try
+            {
+                palpiteRepositorio.EditarJogosBrFinais(request, finais);
+
+                if (transacao.IsActive)
+                    transacao.Commit();
+                return new OkResponse { Ok = "Ok" };
+            }
+            catch
+            {
+                if (transacao.IsActive)
+                    transacao.Rollback();
+                return null;
+            }
         }
     }
 

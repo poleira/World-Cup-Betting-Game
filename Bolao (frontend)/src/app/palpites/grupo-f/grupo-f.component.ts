@@ -65,6 +65,8 @@ export class GrupoFComponent implements OnInit {
     })
     .subscribe((data) => {
       this.data = data;
+      alert('Registrado, boa sorte!')
+      this.goPainel()
     });
   }
 }

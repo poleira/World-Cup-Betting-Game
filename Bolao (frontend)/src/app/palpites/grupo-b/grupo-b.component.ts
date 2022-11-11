@@ -62,6 +62,8 @@ export class GrupoBComponent implements OnInit {
       paisDeGalesPontos: this.PaisDeGalesPontos,
     }).subscribe((data) => {
       this.data = data;
+      alert('Registrado, boa sorte!');
+      this.goPainel();
     });
   }
 }

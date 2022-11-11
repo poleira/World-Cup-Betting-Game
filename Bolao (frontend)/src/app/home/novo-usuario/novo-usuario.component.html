@@ -1,7 +1,7 @@
 <div class="cadastroBackground">
     <div class="cadastroContainer">
       <div class="logoContainer">
-        <div class="logo"></div>
+        <div class="logo"><img src="/img/Bolão_do_hexa-removebg-preview.png"></div>
       </div>
       <form (ngSubmit)="cadastrar()" [formGroup]="novoUsuarioForm"  >
         <div class="inputContainer">
@@ -27,18 +27,18 @@
           <input
             class="input"
             type="text"
-            placeholder="Digite seu e-mail"
-            name="email"
-            formControlName="Email"
+            placeholder="Digite seu token"
+            name="token"
+            formControlName="Token"
           />
           <app-mensagem *ngIf="
-          novoUsuarioForm.get('Email')?.hasError('required') &&
-          novoUsuarioForm.get('Email')?.touched
+          novoUsuarioForm.get('Token')?.hasError('required') &&
+          novoUsuarioForm.get('Token')?.touched
           "
           mensagem="Obrigatorio"></app-mensagem>
         <app-mensagem *ngIf="
-          novoUsuarioForm.get('Email')?.hasError('maxlength') &&
-          novoUsuarioForm.get('Email')?.touched
+          novoUsuarioForm.get('Token')?.hasError('maxlength') &&
+          novoUsuarioForm.get('Token')?.touched
           "
           mensagem="Mto grande"></app-mensagem>
         </div>
