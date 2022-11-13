@@ -2,7 +2,13 @@
 {
     public class RankResponse
     {
-        public virtual string Usuario { get; set; }
-        public virtual int Pontuacao { get; set; }
+        public RankResponse(string usuario, int pontuacao)
+        {
+            Usuario = usuario;
+            Pontuacao = pontuacao;
+        }
+
+        public string Usuario { get; set; }
+        public int Pontuacao { get; set; }
     }
 }

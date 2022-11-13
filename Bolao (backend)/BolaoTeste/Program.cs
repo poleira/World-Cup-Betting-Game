@@ -63,7 +63,7 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddSingleton<ISessionFactory>(factory =>
 {
-    string connectionString = builder.Configuration.GetConnectionString("MySql");
+    string connectionString = "Data Source=bolao-hexa.mysql.database.azure.com;Initial Catalog=teste;User ID=polin;Password=@Botafogo123;SslMode=Required;";
     return Fluently.Configure().Database(MySQLConfiguration.Standard
                 .ConnectionString(connectionString)
                 .FormatSql()
@@ -90,11 +90,11 @@ builder.Services.AddSingleton<IPalpiteServico, PalpiteServico>();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+//{
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+//}
 
 app.UseHttpsRedirection();
 app.UseCors("MyCorsImplementationPolicy");

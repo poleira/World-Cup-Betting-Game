@@ -1,5 +1,4 @@
 
-
 CREATE TABLE QUARTAS_1 (
 ID int NOT NULL AUTO_INCREMENT,
                 primary key(ID),
@@ -22,16 +21,26 @@ ID int NOT NULL AUTO_INCREMENT,
                 TIME1 VARCHAR(25)
 );
 
+CREATE TABLE HABILITARPALPITE (
+ID int NOT NULL AUTO_INCREMENT,
+                primary key(ID),
+                GERAL BOOLEAN,
+                OITAVAS BOOLEAN,
+                QUARTAS BOOLEAN,
+                SEMIS BOOLEAN,
+                FINAIS BOOLEAN
+);
+
 CREATE TABLE JOGOSDOBR_1 (
 ID int NOT NULL AUTO_INCREMENT,
                 primary key(ID),
-                JOGO1 VARCHAR(2),
-                JOGO2 VARCHAR(2),
-                JOGO3 VARCHAR(2),
-                OITAVAS VARCHAR(2),
-                QUARTAS VARCHAR(2),
-                SEMIS VARCHAR(2),
-                FINAL VARCHAR(2)
+                JOGO1 VARCHAR(8),
+                JOGO2 VARCHAR(8),
+                JOGO3 VARCHAR(8),
+                OITAVAS VARCHAR(8),
+                QUARTAS VARCHAR(8),
+                SEMIS VARCHAR(8),
+                FINAL VARCHAR(8)
                 
 );
 
@@ -39,7 +48,6 @@ ID int NOT NULL AUTO_INCREMENT,
 CREATE TABLE GD_1 (
 				ID int NOT NULL AUTO_INCREMENT,
                 primary key(ID),
-                
                 FRANCA INT(2),
                 AUSTRALIA INT(2),
                 DINAMARCA INT(2),
@@ -249,13 +257,13 @@ ID int NOT NULL AUTO_INCREMENT,
 CREATE TABLE JOGOSDOBR (
 ID int NOT NULL AUTO_INCREMENT,
                 primary key(ID),
-                JOGO1 VARCHAR(2),
-                JOGO2 VARCHAR(2),
-                JOGO3 VARCHAR(2),
-                OITAVAS VARCHAR(2),
-                QUARTAS VARCHAR(2),
-                SEMIS VARCHAR(2),
-                FINAL VARCHAR(2)
+                JOGO1 VARCHAR(8),
+                JOGO2 VARCHAR(8),
+                JOGO3 VARCHAR(8),
+                OITAVAS VARCHAR(8),
+                QUARTAS VARCHAR(8),
+                SEMIS VARCHAR(8),
+                FINAL VARCHAR(8)
                 
 );
 
