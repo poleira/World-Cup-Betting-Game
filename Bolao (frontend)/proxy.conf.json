@@ -1,7 +1,6 @@
 {
-    "/api": {
-      "target": "https://localhost:7288",
-      "secure": false
-    }
+  "/api": {
+    "target": "https://bolao-hexa-api.azurewebsites.net",
+    "secure": false
+  }
 }
-

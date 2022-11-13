@@ -18,8 +18,8 @@ export class GrupoCComponent implements OnInit {
   Polonia: any;
   PoloniaPontos: number = 0;
   Usuario: String = '';
-  data:any;
-  HabilitaPalpite:any;
+  data: any;
+  HabilitaPalpite: any;
 
   constructor(
     private httpClient: HttpClient,
@@ -28,7 +28,14 @@ export class GrupoCComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.httpClient.get<any>('https://localhost:7288/api/HabilitarPalpite',{}).subscribe((data)=> {this.HabilitaPalpite = data.geral})
+    this.httpClient
+      .get<any>(
+        'https://bolao-hexa-api.azurewebsites.net/api/HabilitarPalpite',
+        {}
+      )
+      .subscribe((data) => {
+        this.HabilitaPalpite = data.geral;
+      });
   }
 
   goPainel() {
@@ -50,20 +57,22 @@ export class GrupoCComponent implements OnInit {
     const mexico = parseInt(this.Mexico, 10);
     const polonia = parseInt(this.Polonia, 10);
 
-    this.httpClient.put<any>('https://localhost:7288/api/Gc', {
-      usuario: this.Usuario,
-      argentina: argentina,
-      arabiaSaudita: arabiaSaudita,
-      mexico: mexico,
-      polonia: polonia,
-      argentinaPontos: this.ArgentinaPontos,
-      arabiaSauditaPontos: this.ArabiaSauditaPontos,
-      mexicoPontos: this.MexicoPontos,
-      poloniaPontos: this.PoloniaPontos,
-    }).subscribe((data) => {
-      this.data = data;
-      alert('Registrado, boa sorte!')
-      this.goPainel()
-    });
+    this.httpClient
+      .put<any>('https://bolao-hexa-api.azurewebsites.net/api/Gc', {
+        usuario: this.Usuario,
+        argentina: argentina,
+        arabiaSaudita: arabiaSaudita,
+        mexico: mexico,
+        polonia: polonia,
+        argentinaPontos: this.ArgentinaPontos,
+        arabiaSauditaPontos: this.ArabiaSauditaPontos,
+        mexicoPontos: this.MexicoPontos,
+        poloniaPontos: this.PoloniaPontos,
+      })
+      .subscribe((data) => {
+        this.data = data;
+        alert('Registrado, boa sorte!');
+        this.goPainel();
+      });
   }
 }

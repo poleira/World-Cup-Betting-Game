@@ -19,8 +19,8 @@ export class GrupoAComponent implements OnInit {
   Holanda: any = 0;
   HolandaPontos: number = 0;
   Usuario: String = '';
-  data:any;
-  HabilitaPalpite:any;
+  data: any;
+  HabilitaPalpite: any;
 
   constructor(
     private httpClient: HttpClient,
@@ -29,7 +29,14 @@ export class GrupoAComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.httpClient.get<any>('https://localhost:7288/api/HabilitarPalpite',{}).subscribe((data)=> {this.HabilitaPalpite = data.geral})
+    this.httpClient
+      .get<any>(
+        'https://bolao-hexa-api.azurewebsites.net/api/HabilitarPalpite',
+        {}
+      )
+      .subscribe((data) => {
+        this.HabilitaPalpite = data.geral;
+      });
   }
 
   goPainel() {
@@ -37,7 +44,6 @@ export class GrupoAComponent implements OnInit {
   }
 
   enviar() {
-
     const token = localStorage.getItem('jwt');
     if (token) {
       const decoded = this.jwtHelper.decodeToken(token);
@@ -51,22 +57,22 @@ export class GrupoAComponent implements OnInit {
     const senegal = parseInt(this.Senegal, 10);
 
     console.log(this.HabilitaPalpite);
-    this.httpClient.put<any>('https://localhost:7288/api/Ga', {
-      usuario: this.Usuario,
-      qatar: qatar,
-      equador: equador,
-      senegal: senegal,
-      holanda: holanda,
-      qatarPontos: this.QatarPontos,
-      equadorPontos: this.EcuadorPontos,
-      senegalPontos: this.SenegalPontos,
-      holandaPontos: this.HolandaPontos,
-    }).subscribe((data) => {
-      this.data = data;
-      alert('Registrado, boa sorte!')
-      this.goPainel()
-    });
+    this.httpClient
+      .put<any>('https://bolao-hexa-api.azurewebsites.net/api/Ga', {
+        usuario: this.Usuario,
+        qatar: qatar,
+        equador: equador,
+        senegal: senegal,
+        holanda: holanda,
+        qatarPontos: this.QatarPontos,
+        equadorPontos: this.EcuadorPontos,
+        senegalPontos: this.SenegalPontos,
+        holandaPontos: this.HolandaPontos,
+      })
+      .subscribe((data) => {
+        this.data = data;
+        alert('Registrado, boa sorte!');
+        this.goPainel();
+      });
   }
-  
-  }
-
+}

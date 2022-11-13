@@ -43,7 +43,9 @@ export class ListaPaineisComponent implements OnInit {
   ngOnInit(): void {
     this.getUsuario();
     this.http
-      .post<any>('https://localhost:7288/api/Painel', { usuario: this.Usuario })
+      .post<any>('https://bolao-hexa-api.azurewebsites.net/api/Painel', {
+        usuario: this.Usuario,
+      })
       .subscribe((data) => {
         this.data = data;
         this.GrupoA = {
@@ -94,7 +96,6 @@ export class ListaPaineisComponent implements OnInit {
           uruguai: data.uruguai,
           coreiaDoSul: data.coreiaDoSul,
         };
-        ;
         this.Organize();
       });
   }

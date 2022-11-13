@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
   login() {
     this.http
       .post<AuthenticatedResponse>(
-        'https://localhost:7288/api/Login',
+        'https://bolao-hexa-api.azurewebsites.net/api/Login',
         {
           usuario: this.usuario,
           senha: this.senha,
@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
           this.invalidLogin = false;
           this.router.navigate(['painel']);
         },
-        error: (err: HttpErrorResponse) => (this.invalidLogin = true),
+        error: () => alert('Usuario ou senha errados.'),
       });
   }
 }

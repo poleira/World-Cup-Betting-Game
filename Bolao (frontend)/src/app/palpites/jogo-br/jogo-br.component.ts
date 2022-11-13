@@ -40,10 +40,16 @@ export class JogoBRComponent implements OnInit {
 
   ngOnInit(): void {
     this.httpClient
-      .get<any>('https://localhost:7288/api/HabilitarPalpite', {})
+      .get<any>(
+        'https://bolao-hexa-api.azurewebsites.net/api/HabilitarPalpite',
+        {}
+      )
       .subscribe((data) => {
-        this.HabilitaPalpite = data.geral; this.HabilitaPalpiteFinais = data.finais; this.HabilitaPalpiteSemis = data.semis;
-        this.HabilitaPalpiteQuartas = data.quartas; this.HabilitaPalpiteOitavas = data.oitavas;
+        this.HabilitaPalpite = data.geral;
+        this.HabilitaPalpiteFinais = data.finais;
+        this.HabilitaPalpiteSemis = data.semis;
+        this.HabilitaPalpiteQuartas = data.quartas;
+        this.HabilitaPalpiteOitavas = data.oitavas;
       });
   }
 
@@ -69,11 +75,16 @@ export class JogoBRComponent implements OnInit {
       this.PlacarAdversarioGrupos3.toString();
     console.log(retornoGrupos1, retornoGrupos2, retornoGrupos3);
     this.httpClient
-      .put<any>('https://localhost:7288/api/JogosBrGrupos', { usuario: this.Usuario, jogoBr1: retornoGrupos1, jogoBr2: retornoGrupos2, jogoBr3: retornoGrupos3})
+      .put<any>('https://bolao-hexa-api.azurewebsites.net/api/JogosBrGrupos', {
+        usuario: this.Usuario,
+        jogoBr1: retornoGrupos1,
+        jogoBr2: retornoGrupos2,
+        jogoBr3: retornoGrupos3,
+      })
       .subscribe((data) => {
         this.data = data;
-        alert('Registrado, boa sorte!')
-      this.goPainel()
+        alert('Registrado, boa sorte!');
+        this.goPainel();
       });
   }
   enviarOitavas() {
@@ -87,12 +98,15 @@ export class JogoBRComponent implements OnInit {
       this.PlacarBrasilOitavas.toString() +
       this.PlacarAdversarioOitavas.toString();
 
-      this.httpClient
-      .put<any>('https://localhost:7288/api/JogosBrOitavas', { usuario: this.Usuario, jogoBr: retornoOitavas})
+    this.httpClient
+      .put<any>('https://bolao-hexa-api.azurewebsites.net/api/JogosBrOitavas', {
+        usuario: this.Usuario,
+        jogoBr: retornoOitavas,
+      })
       .subscribe((data) => {
         this.data = data;
-        alert('Registrado, boa sorte!')
-      this.goPainel()
+        alert('Registrado, boa sorte!');
+        this.goPainel();
       });
   }
   enviarQuartas() {
@@ -108,11 +122,14 @@ export class JogoBRComponent implements OnInit {
     console.log(retornoQuartas);
 
     this.httpClient
-      .put<any>('https://localhost:7288/api/JogosBrQuartas', { usuario: this.Usuario, jogoBr: retornoQuartas})
+      .put<any>('https://bolao-hexa-api.azurewebsites.net/api/JogosBrQuartas', {
+        usuario: this.Usuario,
+        jogoBr: retornoQuartas,
+      })
       .subscribe((data) => {
         this.data = data;
-        alert('Registrado, boa sorte!')
-      this.goPainel()
+        alert('Registrado, boa sorte!');
+        this.goPainel();
       });
   }
   enviarSemis() {
@@ -127,11 +144,14 @@ export class JogoBRComponent implements OnInit {
     console.log(retornoSemis);
 
     this.httpClient
-      .put<any>('https://localhost:7288/api/JogosBrSemis', { usuario: this.Usuario, jogoBr: retornoSemis})
+      .put<any>('https://bolao-hexa-api.azurewebsites.net/api/JogosBrSemis', {
+        usuario: this.Usuario,
+        jogoBr: retornoSemis,
+      })
       .subscribe((data) => {
         this.data = data;
-        alert('Registrado, boa sorte!')
-      this.goPainel()
+        alert('Registrado, boa sorte!');
+        this.goPainel();
       });
   }
   enviarFinais() {
@@ -147,11 +167,14 @@ export class JogoBRComponent implements OnInit {
     console.log(retornoFinais);
 
     this.httpClient
-      .put<any>('https://localhost:7288/api/JogosBrFinais', { usuario: this.Usuario, jogoBr: retornoFinais})
+      .put<any>('https://bolao-hexa-api.azurewebsites.net/api/JogosBrFinais', {
+        usuario: this.Usuario,
+        jogoBr: retornoFinais,
+      })
       .subscribe((data) => {
         this.data = data;
-        alert('Registrado, boa sorte!')
-      this.goPainel()
+        alert('Registrado, boa sorte!');
+        this.goPainel();
       });
   }
 }

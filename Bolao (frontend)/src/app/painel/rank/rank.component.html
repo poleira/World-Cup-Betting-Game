@@ -11,28 +11,28 @@
           </tr>
           <tr *ngFor="let user of customers; let i = index">
             <td *ngIf="i == 0" [ngStyle]="{ color: 'green' }">
-              {{ user.Usuario }}
+              {{ user.usuario }}
             </td>
             <td *ngIf="i == 0" [ngStyle]="{ color: 'green' }">
-              {{ user.Pontos }}
+              {{ user.pontuacao }}
             </td>
             <td *ngIf="i == 0" [ngStyle]="{ color: 'green' }">
               {{ i + 1 + "º" }}
             </td>
             <td *ngIf="i == 1 || i == 2" [ngStyle]="{ color: 'lightgreen' }">
-              {{ user.Usuario }}
+              {{ user.usuario }}
             </td>
             <td *ngIf="i == 1 || i == 2" [ngStyle]="{ color: 'lightgreen' }">
-              {{ user.Pontos }}
+              {{ user.pontuacao }}
             </td>
             <td *ngIf="i == 1 || i == 2" [ngStyle]="{ color: 'lightgreen' }">
               {{ i + 1 + "º" }}
             </td>
             <td *ngIf="i > 2" [ngStyle]="{ color: 'lightgrey' }">
-              {{ user.Usuario }}
+              {{ user.usuario }}
             </td>
             <td *ngIf="i > 2" [ngStyle]="{ color: 'lightgrey' }">
-              {{ user.Pontos }}
+              {{ user.pontuacao }}
             </td>
             <td *ngIf="i > 2" [ngStyle]="{ color: 'lightgrey' }">
               {{ i + 1 + "º" }}

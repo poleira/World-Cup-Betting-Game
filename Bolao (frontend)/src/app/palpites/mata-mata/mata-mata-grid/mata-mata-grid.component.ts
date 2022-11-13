@@ -71,11 +71,14 @@ export class MataMataGridComponent implements OnInit {
         decoded['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'];
     }
     this.edit = await this.http
-      .get<any>('https://localhost:7288/api/HabilitarPalpite', {})
+      .get<any>(
+        'https://bolao-hexa-api.azurewebsites.net/api/HabilitarPalpite',
+        {}
+      )
       .toPromise();
 
     let result = await this.http
-      .post<any>('https://localhost:7288/api/Oitavas', {
+      .post<any>('https://bolao-hexa-api.azurewebsites.net/api/Oitavas', {
         usuario: this.Usuario,
       })
       .toPromise();
@@ -132,7 +135,7 @@ export class MataMataGridComponent implements OnInit {
     };
 
     let oitavasResponse = await this.http
-      .put<any>('https://localhost:7288/api/Quartas', {
+      .put<any>('https://bolao-hexa-api.azurewebsites.net/api/Quartas', {
         usuario: this.Usuario,
         time1: quartasPayload.time1,
         time2: quartasPayload.time2,
@@ -146,7 +149,7 @@ export class MataMataGridComponent implements OnInit {
       .toPromise();
 
     let quartasResponse = await this.http
-      .put<any>('https://localhost:7288/api/Semis', {
+      .put<any>('https://bolao-hexa-api.azurewebsites.net/api/Semis', {
         usuario: this.Usuario,
         time1: semisPayload.time1,
         time2: semisPayload.time2,
@@ -156,7 +159,7 @@ export class MataMataGridComponent implements OnInit {
       .toPromise();
 
     let semisResponse = await this.http
-      .put<any>('https://localhost:7288/api/Finais', {
+      .put<any>('https://bolao-hexa-api.azurewebsites.net/api/Finais', {
         usuario: this.Usuario,
         time1: finaisPayload.time1,
         time2: finaisPayload.time2,
@@ -164,7 +167,7 @@ export class MataMataGridComponent implements OnInit {
       .toPromise();
 
     let finaisResponse = await this.http
-      .put<any>('https://localhost:7288/api/Campeao', {
+      .put<any>('https://bolao-hexa-api.azurewebsites.net/api/Campeao', {
         usuario: this.Usuario,
         time: campeaoPayload.time,
       })
@@ -172,7 +175,7 @@ export class MataMataGridComponent implements OnInit {
 
     console.log(quartasPayload, semisPayload, finaisPayload, campeaoPayload);
 
-    alert('Registrado, boa sorte!')
-    this.goPainel()
+    alert('Registrado, boa sorte!');
+    this.goPainel();
   }
 }

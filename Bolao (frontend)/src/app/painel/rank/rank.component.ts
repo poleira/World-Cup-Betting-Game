@@ -8,19 +8,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
   styleUrls: ['./rank.component.css'],
 })
 export class RankComponent implements OnInit {
-  customers: any = [
-    { Usuario: 'lucas', Pontos: 3 },
-    { Usuario: 'lucas', Pontos: 3 },
-    { Usuario: 'lucas', Pontos: 3 },
-    { Usuario: 'lucas', Pontos: 3 },
-    { Usuario: 'lucas', Pontos: 3 },
-    { Usuario: 'lucas', Pontos: 3 },
-    { Usuario: 'lucas', Pontos: 3 },
-    { Usuario: 'lucas', Pontos: 3 },
-    { Usuario: 'lucas', Pontos: 3 },
-    { Usuario: 'lucas', Pontos: 3 },
-    { Usuario: 'lucas', Pontos: 3 },
-  ];
+  customers: any;
 
   constructor(private http: HttpClient, private jwtHelper: JwtHelperService) {}
 
@@ -33,9 +21,14 @@ export class RankComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    // this.http.get('https://localhost:7288/api/Rank').subscribe({
-    //   next: (result: any) => (this.customers = result),
-    //   error: (err: HttpErrorResponse) => console.log(err),
-    // });
+    this.http
+      .get('https://bolao-hexa-api.azurewebsites.net/api/Rank')
+      .subscribe({
+        next: (result: any) => {
+          this.customers = result;
+          console.log(result);
+        },
+        error: (err: HttpErrorResponse) => console.log(err),
+      });
   }
 }

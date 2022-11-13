@@ -10,7 +10,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class GrupoHComponent implements OnInit {
   Portugal: any;
-  PortugalPontos!: number ;
+  PortugalPontos!: number;
   Gana: any;
   GanaPontos: number = 0;
   Uruguai: any;
@@ -18,7 +18,7 @@ export class GrupoHComponent implements OnInit {
   CoreiaDoSul: any;
   CoreiaDoSulPontos: number = 0;
   Usuario: String = '';
-  data:any;
+  data: any;
   HabilitaPalpite: any;
 
   constructor(
@@ -28,7 +28,14 @@ export class GrupoHComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.httpClient.get<any>('https://localhost:7288/api/HabilitarPalpite',{}).subscribe((data)=> {this.HabilitaPalpite = data.geral})
+    this.httpClient
+      .get<any>(
+        'https://bolao-hexa-api.azurewebsites.net/api/HabilitarPalpite',
+        {}
+      )
+      .subscribe((data) => {
+        this.HabilitaPalpite = data.geral;
+      });
   }
 
   goPainel() {
@@ -50,21 +57,22 @@ export class GrupoHComponent implements OnInit {
     const uruguai = parseInt(this.Uruguai, 10);
     const coreiaDoSul = parseInt(this.CoreiaDoSul, 10);
 
-
-    this.httpClient.put('https://localhost:7288/api/Gh', {
-      portugal: portugal,
-      gana: gana,
-      uruguai: uruguai,
-      coreiaDoSul: coreiaDoSul,
-      portugalPontos: this.PortugalPontos,
-      ganaPontos: this.GanaPontos,
-      uruguaiPontos: this.UruguaiPontos,
-      coreiaDoSulPontos: this.CoreiaDoSulPontos,
-      usuario: this.Usuario,
-    }).subscribe((data) => {
-      this.data = data;
-      alert('Registrado, boa sorte!')
-      this.goPainel()
-    });
+    this.httpClient
+      .put('https://bolao-hexa-api.azurewebsites.net/api/Gh', {
+        portugal: portugal,
+        gana: gana,
+        uruguai: uruguai,
+        coreiaDoSul: coreiaDoSul,
+        portugalPontos: this.PortugalPontos,
+        ganaPontos: this.GanaPontos,
+        uruguaiPontos: this.UruguaiPontos,
+        coreiaDoSulPontos: this.CoreiaDoSulPontos,
+        usuario: this.Usuario,
+      })
+      .subscribe((data) => {
+        this.data = data;
+        alert('Registrado, boa sorte!');
+        this.goPainel();
+      });
   }
 }

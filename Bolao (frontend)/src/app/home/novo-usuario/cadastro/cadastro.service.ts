@@ -4,15 +4,15 @@ import { Observable } from 'rxjs/internal/Observable';
 import { Cadastro } from './cadastro';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CadastroService {
+  constructor(private httpClient: HttpClient) {}
 
-  constructor(private httpClient: HttpClient) { }
-
-  cadastrar(cadastro:Cadastro) :Observable<any>{
-    return this.httpClient.post("https://localhost:7288/api/Cadastro", cadastro)
+  cadastrar(cadastro: Cadastro): Observable<any> {
+    return this.httpClient.post(
+      'https://bolao-hexa-api.azurewebsites.net/api/Cadastro',
+      cadastro
+    );
   }
 }
-
-
