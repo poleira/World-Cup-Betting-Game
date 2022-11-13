@@ -15,6 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
+      - task: NodeTool@0
+        displayName: "Navigate to frontend dir"
+      - script: |
+          cd "Bolao (frontend)/"
       - uses: actions/checkout@v2
         with:
           submodules: true
