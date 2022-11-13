@@ -15,10 +15,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
-      - task: NodeTool@0
-        displayName: "Navigate to frontend dir"
-      - script: |
-          cd "Bolao (frontend)/"
       - uses: actions/checkout@v2
         with:
           submodules: true
@@ -34,6 +30,7 @@ jobs:
           app_location: "/Bolao (frontend)" # App source code path
           api_location: "" # Api source code path - optional
           output_location: "/Bolao (frontend)/dist/bolao" # Built app content directory - optional
+          app_build_command: "cd 'Bolao (frontend)' && npm i && npm run build"
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
