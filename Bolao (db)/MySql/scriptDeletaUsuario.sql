@@ -1,0 +1,15 @@
+DELETE FROM cadastro WHERE CODCADASTRO = 4;
+DELETE FROM ga WHERE id = 5;
+DELETE FROM gb WHERE id = 5;
+DELETE FROM gc WHERE id = 5;
+DELETE FROM gd WHERE id = 5;
+DELETE FROM ge WHERE id = 4;
+DELETE FROM gf WHERE id = 4;
+DELETE FROM gg WHERE id = 4;
+DELETE FROM gh WHERE id = 4;
+DELETE FROM oitavas WHERE id = 4;
+DELETE FROM quartas WHERE id = 4;
+DELETE FROM semis WHERE id = 4;
+DELETE FROM finais WHERE id = 4; 
+DELETE FROM campeao WHERE id = 4;
+DELETE FROM jogosdobr WHERE id = 4;
